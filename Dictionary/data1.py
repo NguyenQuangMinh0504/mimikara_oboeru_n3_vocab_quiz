@@ -1,3 +1,8 @@
+import xlsxwriter
+
+import pandas as pd
+
+
 data = []
 data.append([['男性'], ['man'], ['dansei'], ['nam tính']])
 data.append([['女性'], ['woman'], ['josei'], ['nữ tính']])
@@ -70,3 +75,10 @@ data.append([['賛成'], ['agreement', 'support'], ['sansei'], ['tán thành']])
 data.append([['反対'], ['opposite', 'opposition'], ['hantai'], ['phản đối']])
 data.append([['想像'], ['imagination'], ['souzou'], ['tưởng tượng']])
 data.append([['努力'], ['effort'], ['doryoku'], ['nỗ lực']])
+
+df = pd.DataFrame(data)
+# writer = pd.ExcelWriter()
+# df.to_excel(writer, sheet_name='welcome', index=False)
+# writer.save()
+
+
