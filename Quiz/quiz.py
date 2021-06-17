@@ -1,6 +1,6 @@
 import copy
 import random
-from Dictionary import data1
+from Dataset import data1
 
 
 def quiz(data):
