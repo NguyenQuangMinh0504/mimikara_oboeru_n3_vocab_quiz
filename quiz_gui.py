@@ -6,9 +6,17 @@ from tkinter import ttk
 
 class Application(tk.Tk):
 
+
+    def _validate(self):
+        self.status['text'] = ''
+        self.meaning['text'] = ''
+        self.spelling['text'] = ''
+        self.kanji['text'] = ''
+        return True
+
+
     def handle(self):
         if self.kanji_input.get() == self.x.loc[self.index][3]:
-            print(self.choice_list)
             self.status['text'] = 'Correct'
             self.choice_list.remove(self.index)
             self.index = self._random_choice()
@@ -29,7 +37,7 @@ class Application(tk.Tk):
         self.choice_list = [i for i in range(len(self.x))]
 
         super().__init__(*args, **kwargs)
-        self.geometry('800x600+550+550')
+        self.geometry('1000x600+200+200')
         label = ttk.Label(self, text='QUIZ TIME !!!', font=('TkDefaultFont', 30))
         label.pack()
         word = tk.LabelFrame(self)
@@ -49,6 +57,8 @@ class Application(tk.Tk):
         kanji_text.grid(row=1, column=0)
         self.kanji_input = ttk.Entry(container)
         self.kanji_input.grid(row=1, column=1)
+        self.kanji_input.config(validate='all',
+                                validatecommand=(self.register(self._validate)))
         self.button = tk.Button(container, text='Check', command=self.handle)
         self.button.grid(row=1, column=2)
 
