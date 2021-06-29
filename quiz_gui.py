@@ -6,7 +6,6 @@ from tkinter import ttk
 
 class Application(tk.Tk):
 
-
     def _validate(self):
         self.status['text'] = ''
         self.meaning['text'] = ''
@@ -14,14 +13,20 @@ class Application(tk.Tk):
         self.kanji['text'] = ''
         return True
 
-
     def handle(self):
         if self.kanji_input.get() == self.x.loc[self.index][3]:
             self.status['text'] = 'Correct'
+            self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
+            self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
+            self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
             self.choice_list.remove(self.index)
-            self.index = self._random_choice()
-            self.word_input['text'] = self.x.loc[self.index][0]
-            self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+            if len(self.choice_list) == 0:
+                self.status['text'] = 'Congratulation!!!'
+                self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+            else:
+                self.index = self._random_choice()
+                self.word_input['text'] = self.x.loc[self.index][0]
+                self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
         else:
             self.status['text'] = 'Incorrect'
             self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
