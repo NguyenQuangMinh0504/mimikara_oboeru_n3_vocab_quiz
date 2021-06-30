@@ -6,39 +6,44 @@ from tkinter import ttk
 
 class Application(tk.Tk):
 
-    def _validate(self):
+    def _validate(self, action):
+        # if action == '0': # currently has a bug for font
+        #     self.kanji_input.delete(0, tk.END)
         self.status['text'] = ''
         self.meaning['text'] = ''
         self.spelling['text'] = ''
         self.kanji['text'] = ''
         return True
 
-    def handle(self):
-        if self.kanji_input.get() == self.x.loc[self.index][3]:
-            self.status['text'] = 'Correct'
-            self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
-            self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
-            self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
-            self.choice_list.remove(self.index)
-            if len(self.choice_list) == 0:
-                self.status['text'] = 'Congratulation!!!'
-                self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+    def _handle(self, event=None):
+        try:
+            if self.kanji_input.get() == self.x.loc[self.index][3]:
+                self.status['text'] = 'Correct'
+                self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
+                self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
+                self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
+                self.choice_list.remove(self.index)
+                if len(self.choice_list) == 0:
+                    self.status['text'] = 'Congratulation!!!'
+                    self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+                else:
+                    self.index = self._random_choice()
+                    self.word_input['text'] = self.x.loc[self.index][0]
+                    self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
             else:
-                self.index = self._random_choice()
-                self.word_input['text'] = self.x.loc[self.index][0]
+                self.status['text'] = 'Incorrect'
+                self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
+                self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
+                self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
                 self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
-        else:
-            self.status['text'] = 'Incorrect'
-            self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
-            self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
-            self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
-            self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+        except ValueError:
+            pass
 
     def _random_choice(self):
         return random.choice(self.choice_list)
 
     def __init__(self, *args, **kwargs):
-        self.x = pd.read_csv('Dataset/data1.csv')
+        self.x = pd.read_csv('Dataset/test.csv')
         self.choice_list = [i for i in range(len(self.x))]
 
         super().__init__(*args, **kwargs)
@@ -63,8 +68,9 @@ class Application(tk.Tk):
         self.kanji_input = ttk.Entry(container)
         self.kanji_input.grid(row=1, column=1)
         self.kanji_input.config(validate='all',
-                                validatecommand=(self.register(self._validate)))
-        self.button = tk.Button(container, text='Check', command=self.handle)
+                                validatecommand=(self.register(self._validate), '%d'))
+        self.kanji_input.bind('<Return>', self._handle)
+        self.button = tk.Button(container, text='Check', command=self._handle)
         self.button.grid(row=1, column=2)
 
         # for displaying the status
