@@ -16,6 +16,9 @@ class Application(tk.Tk):
         return True
 
     def _print_result(self, status):
+        self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
+        self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
+        self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
         if status:
             self.status['text'] = 'Correct'
             self.choice_list.remove(self.index)
@@ -27,14 +30,12 @@ class Application(tk.Tk):
         else:
             self.status['text'] = 'Incorrect'
         self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
-        self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
-        self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
-        self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
 
     def _handle(self, event=None):
         try:
             if len(self.kanji_input.get()) > 0 and len(self.spelling_input.get()) > 0:
-                if self.kanji_input.get() == self.x.loc[self.index][3]:
+                if self.kanji_input.get() == self.x.loc[self.index][3] \
+                        and self.spelling_input.get() == self.x.loc[self.index][2]:
                     self._print_result(True)
                 else:
                     self._print_result(False)
@@ -82,6 +83,8 @@ class Application(tk.Tk):
         ttk.Label(input_frame, text='Spelling').grid(row=0, column=1, sticky=tk.W, padx=5)
         self.spelling_input = ttk.Entry(input_frame)
         self.spelling_input.grid(row=1, column=1)
+        self.spelling_input.config(validate='all',
+                                   validatecommand=(self.register(self._validate), '%d'))
         self.spelling_input.bind('<Return>', self._handle)
 
         self.button = tk.Button(input_frame, text='Check', command=self._handle)
