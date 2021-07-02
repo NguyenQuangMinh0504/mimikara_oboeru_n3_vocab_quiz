@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import calendar
 import datetime
+
 day_list = [['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']]
 day_list.extend(calendar.monthcalendar(2021, 7))
 root = tk.Tk()
@@ -12,7 +13,7 @@ months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
           'October', 'November', 'December']
 
 calendar_frame = ttk.Frame(root, borderwidth=1, relief='solid', width=550, height=400)
-ttk.Label(root, text='2021 ' + months[datetime.datetime.today().month-1], font=('TkDefaultFont', 30)).pack()
+ttk.Label(root, text='2021 ' + months[datetime.datetime.today().month - 1], font=('TkDefaultFont', 30)).pack()
 calendar_frame.pack()
 
 for i in range(total_rows):

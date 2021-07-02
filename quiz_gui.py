@@ -15,27 +15,40 @@ class Application(tk.Tk):
         self.kanji['text'] = ''
         return True
 
+    def _print_result(self, status):
+        if status:
+            self.status['text'] = 'Correct'
+            self.choice_list.remove(self.index)
+            if len(self.choice_list) == 0:
+                self.status['text'] = 'Congratulation!!!'
+            else:
+                self.index = self._random_choice()
+                self.word['text'] = self.x.loc[self.index][0]
+        else:
+            self.status['text'] = 'Incorrect'
+        self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+        self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
+        self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
+        self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
+
     def _handle(self, event=None):
         try:
-            if self.kanji_input.get() == self.x.loc[self.index][3]:
-                self.status['text'] = 'Correct'
-                self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
-                self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
-                self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
-                self.choice_list.remove(self.index)
-                if len(self.choice_list) == 0:
-                    self.status['text'] = 'Congratulation!!!'
-                    self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+            if len(self.kanji_input.get()) > 0 and len(self.spelling_input.get()) > 0:
+                if self.kanji_input.get() == self.x.loc[self.index][3]:
+                    self._print_result(True)
                 else:
-                    self.index = self._random_choice()
-                    self.word_input['text'] = self.x.loc[self.index][0]
-                    self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
-            else:
-                self.status['text'] = 'Incorrect'
-                self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
-                self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
-                self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
-                self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+                    self._print_result(False)
+            elif len(self.kanji_input.get()) > 0 and len(self.spelling_input.get()) == 0:
+                if self.kanji_input.get() == self.x.loc[self.index][3]:
+                    self._print_result(True)
+                else:
+                    self._print_result(False)
+            elif len(self.kanji_input.get()) == 0 and len(self.spelling_input.get()) > 0:
+                if self.spelling_input.get() == self.x.loc[self.index][2]:
+                    self._print_result(True)
+                else:
+                    self._print_result(False)
+
         except ValueError:
             pass
 
@@ -43,34 +56,35 @@ class Application(tk.Tk):
         return random.choice(self.choice_list)
 
     def __init__(self, *args, **kwargs):
-        self.x = pd.read_csv('Dataset/test.csv')
+        self.x = pd.read_csv('Dataset/data2.csv')
         self.choice_list = [i for i in range(len(self.x))]
 
         super().__init__(*args, **kwargs)
         self.geometry('1000x600+200+200')
-        label = ttk.Label(self, text='QUIZ TIME !!!', font=('TkDefaultFont', 30))
-        label.pack()
-        word = tk.LabelFrame(self)
-        word.pack(fill=tk.Y, pady=10)
         self.index = self._random_choice()
 
-        self.word_input = ttk.Label(word, text=self.x.loc[self.index][0], font=('TkDefaultFont', 100))
-        self.word_input.grid(row=0, sticky=tk.W+tk.E, padx=20, columnspan=2)
+        self.word = ttk.Label(self, text=self.x.loc[self.index][0], font=('TkDefaultFont', 100))
+        self.word.pack()
 
         self.word_count = ttk.Label(self, text='Word remaining: ' + str(len(self.x)), font=('TkDefaultFont', 30))
         self.word_count.pack()
 
         # group of input
-        container = tk.Frame(self)
-        container.pack(pady=10)
-        kanji_text = ttk.Label(container, text='Kanji')
-        kanji_text.grid(row=1, column=0)
-        self.kanji_input = ttk.Entry(container)
-        self.kanji_input.grid(row=1, column=1)
+        input_frame = tk.Frame(self)
+        input_frame.pack(pady=10)
+        ttk.Label(input_frame, text='Kanji').grid(row=0, column=0, sticky=tk.W, padx=5)
+        self.kanji_input = ttk.Entry(input_frame)
+        self.kanji_input.grid(row=1, column=0)
         self.kanji_input.config(validate='all',
                                 validatecommand=(self.register(self._validate), '%d'))
         self.kanji_input.bind('<Return>', self._handle)
-        self.button = tk.Button(container, text='Check', command=self._handle)
+
+        ttk.Label(input_frame, text='Spelling').grid(row=0, column=1, sticky=tk.W, padx=5)
+        self.spelling_input = ttk.Entry(input_frame)
+        self.spelling_input.grid(row=1, column=1)
+        self.spelling_input.bind('<Return>', self._handle)
+
+        self.button = tk.Button(input_frame, text='Check', command=self._handle)
         self.button.grid(row=1, column=2)
 
         # for displaying the status
