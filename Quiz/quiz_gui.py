@@ -2,9 +2,22 @@ import random
 import pandas as pd
 import tkinter as tk
 from tkinter import ttk
+from Widget.Frame import UnitSelectionFrame
 
 
 class Application(tk.Tk):
+
+    def _select_unit_button_command(self):
+        path = 'Dataset/data{}.csv'.format(self.unit_selection_widget.unit_select_spin_box.get())
+        try:
+            self.x = pd.read_csv(path)
+            self.choice_list = [i for i in range(len(self.x))]
+            self.index = self._random_choice()
+            self.word['text'] = self.x.loc[self.index][0]
+            self.choice_list = [i for i in range(len(self.x))]
+            self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
+        except FileNotFoundError:
+            pass
 
     def _validate(self, action):
         # if action == '0': # currently has a bug for font
@@ -20,6 +33,8 @@ class Application(tk.Tk):
         self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
         self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
         if status:
+            # self.kanji_input.delete(0, tk.END)
+            # self.spelling_input.delete(0, tk.END)
             self.status['text'] = 'Correct'
             self.choice_list.remove(self.index)
             if len(self.choice_list) == 0:
@@ -29,13 +44,14 @@ class Application(tk.Tk):
                 self.word['text'] = self.x.loc[self.index][0]
         else:
             self.status['text'] = 'Incorrect'
+
         self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
 
     def _handle(self, event=None):
         try:
             if len(self.kanji_input.get()) > 0 and len(self.spelling_input.get()) > 0:
-                if self.kanji_input.get() == self.x.loc[self.index][3] \
-                        and self.spelling_input.get() == self.x.loc[self.index][2]:
+                if self.kanji_input.get() == self.x.loc[self.index][3] and \
+                        self.spelling_input.get() == self.x.loc[self.index][2]:
                     self._print_result(True)
                 else:
                     self._print_result(False)
@@ -57,17 +73,19 @@ class Application(tk.Tk):
         return random.choice(self.choice_list)
 
     def __init__(self, *args, **kwargs):
-        self.x = pd.read_csv('Dataset/data2.csv')
-        self.choice_list = [i for i in range(len(self.x))]
 
         super().__init__(*args, **kwargs)
         self.geometry('1000x600+200+200')
-        self.index = self._random_choice()
 
-        self.word = ttk.Label(self, text=self.x.loc[self.index][0], font=('TkDefaultFont', 100))
+        # setting the select unit part
+        self.unit_selection_widget = UnitSelectionFrame(self)
+        self.unit_selection_widget.pack()
+        self.unit_selection_widget.select_unit_button.config(command=self._select_unit_button_command)
+
+        self.word = ttk.Label(self, text='', font=('TkDefaultFont', 100))
         self.word.pack()
 
-        self.word_count = ttk.Label(self, text='Word remaining: ' + str(len(self.x)), font=('TkDefaultFont', 30))
+        self.word_count = ttk.Label(self, text='', font=('TkDefaultFont', 30))
         self.word_count.pack()
 
         # group of input
