@@ -12,7 +12,7 @@ class Application(tk.Tk):
 
     def select_unit_button_command(self):
 
-        path = '../Data/Dictionary/data{}.csv'.format(self.unit_selection_widget.unit_select_spin_box.get())
+        path = '../JapaneseQuizProject/Data/Dictionary/data{}.csv'.format(self.unit_selection_widget.unit_select_spin_box.get())
         try:
             self.x = pd.read_csv(path)
             self.choice_list = [i for i in range(len(self.x))]
