@@ -48,8 +48,8 @@ class Application(tk.Tk):
     def on_save(self):
         data = {'Word': self.word_input.get(), 'Meaning': self.meaning_input.get(), 'Spelling':
                 self.spelling_input.get(), 'Kanji': self.kanji_input.get()}
-        new_file = not os.path.exists('../Dataset/data4.csv')
-        with open('../Dataset/data4.csv', 'a') as f:
+        new_file = not os.path.exists('../Data/Dictionary/data4.csv')
+        with open('../Data/Dictionary/data4.csv', 'a') as f:
             csv_writer = csv.DictWriter(f, fieldnames=['Word', 'Meaning', 'Spelling', 'Kanji'])
             if new_file:
                 csv_writer.writeheader()
