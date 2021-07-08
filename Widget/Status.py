@@ -33,12 +33,12 @@ class Calendar(tk.Toplevel):
 
     @staticmethod
     def add_active_day():
-        with open('../Data/Status/user_status.txt', 'a') as f:
+        with open('../JapaneseQuizProject/Data/Status/user_status.txt', 'a') as f:
             f.write(datetime.today().strftime('%Y-%m-%d'))
 
     @staticmethod
     def get_active_day():
-        with open('../Data/Status/user_status.txt', 'r') as f:
+        with open('../JapaneseQuizProject/Data/Status/user_status.txt', 'r') as f:
             active_day = [i.rstrip() for i in f.readlines()]
             return active_day
 
