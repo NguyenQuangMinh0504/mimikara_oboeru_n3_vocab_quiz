@@ -8,28 +8,26 @@ class Calendar(tk.Toplevel):
 
     def __init__(self, root, *args, **kwargs):
         super().__init__(root, *args, **kwargs)
-        day_list = [['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']]
-        day_list.extend(calendar.monthcalendar(2021, 7))
-        total_rows = len(day_list)
-        months = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June',
-                  7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
-        calendar_frame = ttk.Frame(self, borderwidth=1, relief='solid')
-        ttk.Label(self, text='2021 ' + months.get(datetime.today().month), font=('TkDefaultFont', 30)).pack()
-        calendar_frame.pack(padx=20, pady=20)
-        for j in range(7):
-            e = ttk.Label(calendar_frame, width=3, foreground='black')
-            e.grid(row=0, column=j, padx=5, pady=5, sticky=tk.E)
-            e['text'] = day_list[0][j]
 
-        for i in range(1, total_rows):
-            for j in range(7):
-                e = ttk.Label(calendar_frame, width=3, foreground='red')
-                e.grid(row=i, column=j, padx=5, pady=5, sticky=tk.E)
-                if day_list[i][j] != 0:
-                    e['text'] = day_list[i][j]
-                    if datetime.strftime(datetime.strptime('2021-07-' + str(e['text']), '%Y-%m-%d'), '%Y-%m-%d') \
-                            in self.get_active_day():
-                        e.config(foreground='green')
+        self.day_list = [['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']]
+        self.this_month = datetime.today().month
+        self.this_year = datetime.today().year
+        self.this_day = datetime.today().date()
+        self.day_list.extend(calendar.monthcalendar(self.this_year, self.this_month))
+
+        title_frame = ttk.Frame(self)
+        title_frame.pack()
+        self.previous_button = ttk.Button(title_frame, text='Previous', command=self._previous)
+        self.previous_button.grid(row=0, column=0, padx=20)
+        self.next_button = ttk.Button(title_frame, text='Next', command=self._next)
+        self.next_button.grid(row=0, column=2, padx=20)
+        self.month_title = ttk.Label(title_frame, text=datetime.strftime(datetime.today(), '%Y %B'),
+                                     font=('TkDefaultFont', 30))
+        self.month_title.grid(row=0, column=1)
+
+        self.calendar_frame = ttk.Frame(self, borderwidth=1, relief='solid')
+        self.calendar_frame.pack(padx=20, pady=20)
+        self._set_calendar()
 
     @staticmethod
     def add_active_day():
@@ -42,7 +40,50 @@ class Calendar(tk.Toplevel):
             active_day = [i.rstrip() for i in f.readlines()]
             return active_day
 
+    def _previous(self):
+        self._clear_frame()
 
+        if self.this_month == 1:
+            self.this_year -= 1
+            self.this_month = 12
+        else:
+            self.this_month -= 1
+        self.day_list = [['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']]
+        self.day_list.extend(calendar.monthcalendar(self.this_year, self.this_month))
+        self._set_calendar()
+        self.month_title['text'] = datetime.strftime(
+            datetime.strptime(str(self.this_year)+'-'+str(self.this_month), '%Y-%m'), '%Y %B')
 
+    def _next(self):
+        self._clear_frame()
+        if self.this_month == 12:
+            self.this_year += 1
+            self.this_month = 1
+        else:
+            self.this_month += 1
+        self.day_list = [['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']]
+        self.day_list.extend(calendar.monthcalendar(self.this_year, self.this_month))
+        self._set_calendar()
+        self.month_title['text'] = datetime.strftime(
+            datetime.strptime(str(self.this_year) + '-' + str(self.this_month), '%Y-%m'), '%Y %B')
+
+    def _clear_frame(self):
+        for widget in self.calendar_frame.winfo_children():
+            widget.destroy()
+
+    def _set_calendar(self):
+        for i in range(len(self.day_list)):
+            for j in range(7):
+                if self.day_list[i][j] != 0:
+                    if i == 0:
+                        e = ttk.Label(self.calendar_frame, width=3, text=self.day_list[i][j], foreground='black')
+                        e.grid(row=0, column=j, padx=5, pady=5, sticky=tk.E)
+                    else:
+                        e = ttk.Label(self.calendar_frame, width=3, text=self.day_list[i][j], foreground='red')
+                        e.grid(row=i, column=j, padx=5, pady=5, sticky=tk.E)
+                        if datetime.strftime(
+                                datetime.strptime('{}-{}-{}'.format(self.this_year, self.this_month, self.day_list[i][j]),
+                                                  '%Y-%m-%d'), '%Y-%m-%d') in self.get_active_day():
+                            e.config(foreground='green')
 
 
