@@ -8,11 +8,11 @@ class Application(tk.Tk):
 
     def show_status(self):
         c(root=self)
-        print(c.get_active_day())
 
     def select_unit_button_command(self):
 
-        path = '../JapaneseQuizProject/Data/Dictionary/data{}.csv'.format(self.unit_selection_widget.unit_select_spin_box.get())
+        path = '../JapaneseQuizProject/Data/Dictionary/data{}.csv'.\
+            format(self.unit_selection_widget.unit_select_spin_box.get())
         try:
             self.x = pd.read_csv(path)
             self.choice_list = [i for i in range(len(self.x))]
@@ -41,7 +41,7 @@ class Application(tk.Tk):
             self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
             self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
             self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
-            self.status['text'] = 'Correct'
+            self.status.config(foreground='green', text='Correct')
             self.choice_list.remove(self.index)
             if len(self.choice_list) == 0:
                 self.status['text'] = 'Congratulation!!!'
@@ -51,7 +51,7 @@ class Application(tk.Tk):
                 self.index = self.random_choice()
                 self.word['text'] = self.x.loc[self.index][0]
         else:
-            self.status['text'] = 'Incorrect'
+            self.status.config(foreground='red', text='Incorrect')
             self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
             self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
             self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
@@ -93,10 +93,6 @@ class Application(tk.Tk):
         profile_menu.add_command(label='Status', command=self.show_status)
         menu_bar.add_cascade(label='Profile', menu=profile_menu)
         self.config(menu=menu_bar)
-
-        self.x = None
-        self.index = None
-        self.choice_list = None
 
         # setting the select unit part
         self.unit_selection_widget = UnitSelectionFrame(self)

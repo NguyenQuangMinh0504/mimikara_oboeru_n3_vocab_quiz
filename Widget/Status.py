@@ -31,8 +31,10 @@ class Calendar(tk.Toplevel):
 
     @staticmethod
     def add_active_day():
-        with open('../JapaneseQuizProject/Data/Status/user_status.txt', 'a') as f:
-            f.write(datetime.today().strftime('%Y-%m-%d'))
+        active_day_list = Calendar.get_active_day()
+        if datetime.today().strftime('%Y-%m-%d') != active_day_list[-1]:
+            with open('../JapaneseQuizProject/Data/Status/user_status.txt', 'a') as f:
+                f.write('\n' + datetime.today().strftime('%Y-%m-%d'))
 
     @staticmethod
     def get_active_day():
@@ -84,6 +86,6 @@ class Calendar(tk.Toplevel):
                         if datetime.strftime(
                                 datetime.strptime('{}-{}-{}'.format(self.this_year, self.this_month, self.day_list[i][j]),
                                                   '%Y-%m-%d'), '%Y-%m-%d') in self.get_active_day():
-                            e.config(foreground='green')
+                            e.config(foreground='green', font='TkDefaultFont 12 bold')
 
 
