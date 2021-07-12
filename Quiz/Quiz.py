@@ -1,13 +1,12 @@
 import random
 import pandas as pd
 from Widget.Frame import *
-from Widget.Status import Calendar as c
+from Widget.Status import ActiveStatus as c
+from Widget.Menu import MainMenu
+from Widget.Sound import Sound
 
 
 class Application(tk.Tk):
-
-    def show_status(self):
-        c(root=self)
 
     def select_unit_button_command(self):
 
@@ -36,12 +35,15 @@ class Application(tk.Tk):
     def print_result(self, status):
 
         if status:
+
             self.input_frame.kanji_input.delete(0, 'end')
             self.input_frame.spelling_input.delete(0, 'end')
             self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
             self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
             self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
             self.status.config(foreground='green', text='Correct')
+            if self.menu_bar.sound.get():
+                Sound.play_right_sound()
             self.choice_list.remove(self.index)
             if len(self.choice_list) == 0:
                 self.status['text'] = 'Congratulation!!!'
@@ -51,10 +53,13 @@ class Application(tk.Tk):
                 self.index = self.random_choice()
                 self.word['text'] = self.x.loc[self.index][0]
         else:
+
             self.status.config(foreground='red', text='Incorrect')
             self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
             self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
             self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
+            if self.menu_bar.sound.get():
+                Sound.play_wrong_sould()
         self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
 
     def handle(self, event=None):
@@ -88,11 +93,8 @@ class Application(tk.Tk):
         self.geometry('1000x600+200+200')
 
         # the menu bar
-        menu_bar = tk.Menu(self)
-        profile_menu = tk.Menu(menu_bar)
-        profile_menu.add_command(label='Status', command=self.show_status)
-        menu_bar.add_cascade(label='Profile', menu=profile_menu)
-        self.config(menu=menu_bar)
+        self.menu_bar = MainMenu(self)
+        self.config(menu=self.menu_bar)
 
         # setting the select unit part
         self.unit_selection_widget = UnitSelectionFrame(self)

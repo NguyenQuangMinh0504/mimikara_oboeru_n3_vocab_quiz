@@ -4,7 +4,7 @@ import calendar
 from datetime import datetime
 
 
-class Calendar(tk.Toplevel):
+class ActiveStatus(tk.Toplevel):
 
     def __init__(self, root, *args, **kwargs):
         super().__init__(root, *args, **kwargs)
@@ -31,7 +31,7 @@ class Calendar(tk.Toplevel):
 
     @staticmethod
     def add_active_day():
-        active_day_list = Calendar.get_active_day()
+        active_day_list = ActiveStatus.get_active_day()
         if datetime.today().strftime('%Y-%m-%d') != active_day_list[-1]:
             with open('../JapaneseQuizProject/Data/Status/user_status.txt', 'a') as f:
                 f.write('\n' + datetime.today().strftime('%Y-%m-%d'))
@@ -87,5 +87,4 @@ class Calendar(tk.Toplevel):
                                 datetime.strptime('{}-{}-{}'.format(self.this_year, self.this_month, self.day_list[i][j]),
                                                   '%Y-%m-%d'), '%Y-%m-%d') in self.get_active_day():
                             e.config(foreground='green', font='TkDefaultFont 12 bold')
-
 
