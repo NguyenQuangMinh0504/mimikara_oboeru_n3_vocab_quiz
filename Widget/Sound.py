@@ -11,7 +11,3 @@ class Sound:
     def play_wrong_sould():
         path = './Data/Sound/wrong_sound.wav'
         os.system("afplay " + path)
-
-
-
-

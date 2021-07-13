@@ -87,4 +87,3 @@ class ActiveStatus(tk.Toplevel):
                                 datetime.strptime('{}-{}-{}'.format(self.this_year, self.this_month, self.day_list[i][j]),
                                                   '%Y-%m-%d'), '%Y-%m-%d') in self.get_active_day():
                             e.config(foreground='green', font='TkDefaultFont 12 bold')
-

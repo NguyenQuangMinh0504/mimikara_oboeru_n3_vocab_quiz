@@ -21,9 +21,9 @@ class MainMenu(Menu):
     def show_status(self):
         ActiveStatus(root=self)
 
-    def show_about(self):
+    @staticmethod
+    def show_about():
         about_message = "Mimikara Oboeru App"
         about_detail = ("Tạo bởi Nguyễn Quang Minh\n",
                         "Gặp lỗi vui lòng liên hệ ngquangminh05042001@gmail.com")
         messagebox.showinfo(title="About", message=about_message, detail=about_detail)
-
