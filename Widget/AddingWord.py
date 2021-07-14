@@ -6,8 +6,8 @@ import csv
 
 
 class VocabularyInput(tk.Toplevel):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, parent, *args, **kwargs):
+        super().__init__(parent, *args, **kwargs)
 
         ttk.Label(self, text='Mimikara Oboeru Vocabulary Input', font=('TkDefaultFont', 30)).\
             grid(row=0, sticky=tk.W+tk.E, padx=20)

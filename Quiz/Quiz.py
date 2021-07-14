@@ -4,6 +4,7 @@ from Widget.Frame import *
 from Widget.Status import ActiveStatus as c
 from Widget.Menu import MainMenu
 from Widget.Sound import Sound
+from Widget.Result import Result
 
 
 class Application(tk.Tk):
@@ -46,14 +47,13 @@ class Application(tk.Tk):
                 Sound.play_right_sound()
             self.choice_list.remove(self.index)
             if len(self.choice_list) == 0:
-                self.status['text'] = 'Congratulation!!!'
-                c.add_active_day()
-                return None
+                self.display_result()
             else:
                 self.index = self.random_choice()
                 self.word['text'] = self.x.loc[self.index][0]
         else:
-
+            if self.index not in self.wrong_ans:
+                self.wrong_ans.append(self.index)
             self.status.config(foreground='red', text='Incorrect')
             self.meaning['text'] = 'meaning: ' + self.x.loc[self.index][1]
             self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
@@ -87,10 +87,21 @@ class Application(tk.Tk):
     def random_choice(self):
         return random.choice(self.choice_list)
 
+    def display_result(self):
+        self.status['text'] = 'Congratulation!!!'
+        c.add_active_day()
+        result = Result(self)
+        for i in self.wrong_ans:
+            wrong_result = ', '.join([self.x.iloc[i][0], self.x.iloc[i][1], self.x.iloc[i][2], self.x.iloc[i][3]])
+            result.wrong_word.insert(tk.CURRENT, wrong_result)
+        result.wrong_word.config(state=tk.DISABLED)
+
     def __init__(self, *args, **kwargs):
 
         super().__init__(*args, **kwargs)
         self.geometry('1000x600+200+200')
+
+        self.wrong_ans = []
 
         # the menu bar
         self.menu_bar = MainMenu(self)
