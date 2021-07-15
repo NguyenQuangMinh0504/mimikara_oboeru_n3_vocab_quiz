@@ -5,6 +5,7 @@ from Widget.Status import ActiveStatus as c
 from Widget.Menu import MainMenu
 from Widget.Sound import Sound
 from Widget.Result import Result
+from Widget.gtts_sound import WordSound
 
 
 class Application(tk.Tk):
@@ -96,10 +97,13 @@ class Application(tk.Tk):
             result.wrong_word.insert(tk.CURRENT, wrong_result)
         result.wrong_word.config(state=tk.DISABLED)
 
+    def play_sound(self):
+        WordSound.play_word_sound(self.word['text'])
+
     def __init__(self, *args, **kwargs):
 
         super().__init__(*args, **kwargs)
-        self.geometry('1000x600+200+200')
+        self.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
 
         self.wrong_ans = []
 
@@ -121,6 +125,13 @@ class Application(tk.Tk):
         # frame of label and input
         self.input_frame = LabelInputFrame(self)
         self.input_frame.pack(pady=10)
+
+        # play sound
+        global sound_image
+        sound_image = tk.PhotoImage(file="./Assets/Image/50px_sound_button.gif")
+        sound_btn = tk.Button(self, image=sound_image, command=self.play_sound)
+        sound_btn.pack()
+        # command=partial(WordSound.play_word_sound, self.word['text']
 
         # for displaying the status
         self.status = ttk.Label(self, text='', font=('TkDefaultFont', 100))

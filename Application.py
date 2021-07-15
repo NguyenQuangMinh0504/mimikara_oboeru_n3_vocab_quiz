@@ -1,4 +1,4 @@
-import Quiz.Quiz
+import View.View
 if __name__ == '__main__':
-    app = Quiz.Quiz.Application()
+    app = View.View.Application()
     app.mainloop()
