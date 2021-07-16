@@ -94,7 +94,7 @@ class Application(tk.Tk):
         result = Result(self)
         for i in self.wrong_ans:
             wrong_result = ', '.join([self.x.iloc[i][0], self.x.iloc[i][1], self.x.iloc[i][2], self.x.iloc[i][3]])
-            result.wrong_word.insert(tk.CURRENT, wrong_result)
+            result.wrong_word.insert(tk.END, wrong_result+'\n'+'------------------------'+'\n')
         result.wrong_word.config(state=tk.DISABLED)
 
     def play_sound(self):
