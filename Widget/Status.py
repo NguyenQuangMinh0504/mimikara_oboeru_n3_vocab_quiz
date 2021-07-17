@@ -5,6 +5,7 @@ from datetime import datetime
 
 
 class ActiveStatus(tk.Toplevel):
+    """Show the active day of status"""
 
     def __init__(self, root, *args, **kwargs):
         super().__init__(root, *args, **kwargs)
@@ -83,7 +84,14 @@ class ActiveStatus(tk.Toplevel):
                     else:
                         e = ttk.Label(self.calendar_frame, width=3, text=self.day_list[i][j], foreground='red')
                         e.grid(row=i, column=j, padx=5, pady=5, sticky=tk.E)
+                        # highlight active days
                         if datetime.strftime(
                                 datetime.strptime('{}-{}-{}'.format(self.this_year, self.this_month, self.day_list[i][j]),
                                                   '%Y-%m-%d'), '%Y-%m-%d') in self.get_active_day():
                             e.config(foreground='green', font='TkDefaultFont 12 bold')
+                        # highlight today
+                        if datetime.strftime(
+                                datetime.strptime(
+                                    '{}-{}-{}'.format(self.this_year, self.this_month, self.day_list[i][j]),
+                                    '%Y-%m-%d'), '%Y-%m-%d') == datetime.today().strftime('%Y-%m-%d'):
+                            e.config(font='TkDefaultFont 15 bold', relief=tk.GROOVE)
