@@ -60,7 +60,7 @@ class Application(tk.Tk):
             self.spelling['text'] = 'spelling: ' + self.x.loc[self.index][2]
             self.kanji['text'] = 'kanji: ' + self.x.loc[self.index][3]
             if self.menu_bar.sound.get():
-                Sound.play_wrong_sould()
+                Sound.play_wrong_sound()
         self.word_count['text'] = 'Word remaining: ' + str(len(self.choice_list))
 
     def handle(self, event=None):
