@@ -1,5 +1,6 @@
 from gtts import gTTS
 import os
+from Widget.Sound import Sound
 
 
 class WordSound:
@@ -14,7 +15,7 @@ class WordSound:
         try:
             word_sound = gTTS(text=word, lang=language, slow=False)
             word_sound.save("word_sound.wav")
-            os.system("afplay word_sound.wav")
+            Sound.play_sound("word_sound.wav")
             os.remove('word_sound.wav')
         except AssertionError:
             pass
