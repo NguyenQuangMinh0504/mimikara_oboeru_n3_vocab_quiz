@@ -21,7 +21,9 @@ Nguyen Quang Minh 2021
 Requirement
 ===========
 Python 3
+
 Pandas
+
 google text to speech (gTTS)
 
 Usage
