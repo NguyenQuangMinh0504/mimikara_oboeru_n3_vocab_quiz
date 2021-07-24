@@ -17,17 +17,17 @@ class MainMenu(Menu):
         self.add_cascade(label='Setting', menu=setting_menu)
         self.sound = BooleanVar(value=True)
         setting_menu.add_checkbutton(label='Sound', variable=self.sound)
-        typing_menu = Menu(setting_menu)
-        setting_menu.add_cascade(label='Typing', menu=typing_menu)
-        self.kanji = BooleanVar(value=True)
-        self.spelling = BooleanVar(value=True)
-        typing_menu.add_checkbutton(label='Kanji', variable=self.kanji)
-        typing_menu.add_checkbutton(label='Spelling', variable=self.spelling)
+        # typing_menu = Menu(setting_menu)
+        # setting_menu.add_cascade(label='Typing', menu=typing_menu)
+        # self.kanji = BooleanVar(value=True)
+        # self.spelling = BooleanVar(value=True)
+        # typing_menu.add_checkbutton(label='Kanji', variable=self.kanji)
+        # typing_menu.add_checkbutton(label='Spelling', variable=self.spelling)
 
         # adding menu
-        add_menu = Menu(self)
-        self.add_cascade(label='Add', menu=add_menu)
-        add_menu.add_command(label='Vocabulary', command=self.add_vocab)
+        # add_menu = Menu(self)
+        # self.add_cascade(label='Add', menu=add_menu)
+        # add_menu.add_command(label='Vocabulary', command=self.add_vocab)
 
         # help menu
         help_menu = Menu(self)
@@ -40,10 +40,9 @@ class MainMenu(Menu):
     def add_vocab(self):
         VocabularyInput(self)
 
-
     @staticmethod
     def show_about():
         about_message = "Mimikara Oboeru App"
-        about_detail = ("Tạo bởi Nguyễn Quang Minh\n",
-                        "Gặp lỗi vui lòng liên hệ ngquangminh05042001@gmail.com")
+        about_detail = ("By Nguyễn Quang Minh\n",
+                        "For further information please contact ngquangminh05042001@gmail.com")
         messagebox.showinfo(title="About", message=about_message, detail=about_detail)
