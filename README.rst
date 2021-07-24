@@ -12,7 +12,6 @@ faster.
 Features
 --------
 
-* Have an user input gui to add word to dictionary
 * Main screen: random pick a word, type the meaning
 
 Authors
@@ -27,8 +26,7 @@ google text to speech (gTTS)
 
 Usage
 =====
-To start the application,
-run JapaneseQuizProject/application/Application.py
+To start the application, clone the repository from github and run Application.py
 
 
 
