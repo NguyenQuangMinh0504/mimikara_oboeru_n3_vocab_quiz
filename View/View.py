@@ -26,8 +26,8 @@ class Application(tk.Tk):
             pass
 
     def validate(self, action):
-        if action == '0':  # currently has a bug for font
-            self.input_frame.kanji_input.delete(0, tk.END)
+        # if action == '0':  # currently has a bug for font
+        #     self.input_frame.kanji_input.delete(0, tk.END)
         self.status['text'] = ''
         self.meaning['text'] = ''
         self.spelling['text'] = ''
