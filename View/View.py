@@ -1,5 +1,6 @@
 import random
 import pandas as pd
+from tkinter import PhotoImage
 from Widget.Frame import *
 from Widget.Status import ActiveStatus as c
 from Widget.Menu import MainMenu
@@ -101,8 +102,9 @@ class Application(tk.Tk):
         WordSound.play_word_sound(self.word['text'])
 
     def __init__(self, *args, **kwargs):
-
         super().__init__(*args, **kwargs)
+        logo = PhotoImage(file="../JapaneseQuizProject/Assets/Image/app_icon.png")
+        self.iconphoto(True, logo)
         self.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
 
         self.wrong_ans = []
