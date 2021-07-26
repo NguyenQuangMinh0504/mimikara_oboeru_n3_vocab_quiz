@@ -13,7 +13,7 @@ class Application(tk.Tk):
 
     def select_unit_button_command(self):
 
-        path = '../JapaneseQuizProject/Data/Dictionary/data{}.csv'.\
+        path = '../mimikara_oboeru_n3_vocab_quiz/Data/Dictionary/data{}.csv'.\
             format(self.unit_selection_widget.unit_select_spin_box.get())
         try:
             self.x = pd.read_csv(path)
@@ -103,7 +103,7 @@ class Application(tk.Tk):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        logo = PhotoImage(file="../JapaneseQuizProject/Assets/Image/app_icon.png")
+        logo = PhotoImage(file="./Assets/Image/app_icon.png")
         self.iconphoto(True, logo)
         self.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
 
