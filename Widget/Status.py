@@ -34,7 +34,9 @@ class ActiveStatus(tk.Toplevel):
     def add_active_day():
         active_day_list = ActiveStatus.get_active_day()
         with open('../mimikara_oboeru_n3_vocab_quiz/Data/Status/user_status.txt', 'a') as f:
-            if datetime.today().strftime('%Y-%m-%d') != active_day_list[-1]:
+            if len(active_day_list) == 0:
+                f.write('\n' + datetime.today().strftime('%Y-%m-%d'))
+            elif datetime.today().strftime('%Y-%m-%d') != active_day_list[-1]:
                 f.write('\n' + datetime.today().strftime('%Y-%m-%d'))
 
     @staticmethod
