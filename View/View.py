@@ -93,8 +93,24 @@ class Application(tk.Tk):
         self.status['text'] = 'Congratulation!!!'
         c.add_active_day()
         result = Result(self)
+
+        # displaying index
+        unit = int(self.unit_selection_widget.unit_select_spin_box.get())
+        k = 0
+        if unit == 1:
+            k = 1
+        elif unit == 2:
+            k = 72
+        elif unit == 3:
+            k = 121
+        elif unit == 4:
+            k = 171
+        elif unit == 5:
+            k = 221
+
+        self.wrong_ans.sort()
         for i in self.wrong_ans:
-            wrong_result = ', '.join([self.x.iloc[i][0], self.x.iloc[i][1], self.x.iloc[i][2], self.x.iloc[i][3]])
+            wrong_result = ', '.join([str(i+k), self.x.iloc[i][0], self.x.iloc[i][1], self.x.iloc[i][2], self.x.iloc[i][3]])
             result.wrong_word.insert(tk.END, wrong_result+'\n'+'------------------------'+'\n')
         result.wrong_word.config(state=tk.DISABLED)
 
@@ -133,7 +149,6 @@ class Application(tk.Tk):
         sound_image = tk.PhotoImage(file="./Assets/Image/50px_sound_button.gif")
         sound_btn = tk.Button(self, image=sound_image, command=self.play_sound)
         sound_btn.pack()
-        # command=partial(WordSound.play_word_sound, self.word['text']
 
         # for displaying the status
         self.status = ttk.Label(self, text='', font=('TkDefaultFont', 100))
