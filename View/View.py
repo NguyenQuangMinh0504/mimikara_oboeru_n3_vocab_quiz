@@ -93,7 +93,7 @@ class Application(tk.Tk):
         self.status['text'] = 'Congratulation!!!'
         c.add_active_day()
         result = Result(self)
-
+        result.number_of_wrong_answer.set(result.number_of_wrong_answer.get() + '{}/{}'.format(len(self.wrong_ans),len(self.x)))
         # displaying index
         unit = int(self.unit_selection_widget.unit_select_spin_box.get())
         k = 0
@@ -112,7 +112,6 @@ class Application(tk.Tk):
         for i in self.wrong_ans:
             wrong_result = ', '.join([str(i+k), self.x.iloc[i][0], self.x.iloc[i][1], self.x.iloc[i][2], self.x.iloc[i][3]])
             result.wrong_word.insert(tk.END, wrong_result+'\n'+'------------------------'+'\n')
-        result.wrong_word.config(state=tk.DISABLED)
 
     def play_sound(self):
         WordSound.play_word_sound(self.word['text'])
