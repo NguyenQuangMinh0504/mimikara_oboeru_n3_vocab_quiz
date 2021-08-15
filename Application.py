@@ -1,4 +1,4 @@
-import View.View
+import View.GUI
 if __name__ == '__main__':
-    app = View.View.Application()
+    app = View.GUI.Application()
     app.mainloop()
