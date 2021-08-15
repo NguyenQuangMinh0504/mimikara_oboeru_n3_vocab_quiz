@@ -1,8 +1,26 @@
 import tkinter as tk
 from tkinter import ttk
+from Setting import Load
 
 
-class UnitSelectionFrame(ttk.Frame):
+class FirstFrame(ttk.Frame):
+    def __init__(self, parent, **kwargs):
+        super().__init__(parent, **kwargs)
+        data = Load.Load.load_unit_complete()
+        k = 1
+        for i in range(4):
+            for j in range(3):
+                label = "Unit {}".format(k)
+                a = tk.Button(self, text=label)
+                a.grid(row=i, column=j, padx=10, pady=10, ipadx=10, ipady=10)
+                if data[label]:
+                    a.config(highlightbackground='green')
+                else:
+                    a.config(highlightbackground='red')
+                k += 1
+
+
+class UnitSelectionFrame(tk.Frame):
     def __init__(self, parent, **kwargs):
         super().__init__(parent, **kwargs)
         ttk.Label(self, text='Unit').grid(row=0, column=0)
@@ -12,7 +30,7 @@ class UnitSelectionFrame(ttk.Frame):
         self.select_unit_button.grid(row=0, column=2)
 
 
-class LabelInputFrame(ttk.Frame):
+class LabelInputFrame(tk.Frame):
     def __init__(self, parent, **kwargs):
         super().__init__(parent, **kwargs)
 

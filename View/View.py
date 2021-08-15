@@ -118,7 +118,7 @@ class Application(tk.Tk):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        logo = PhotoImage(file="./Assets/Image/app_icon.png")
+        logo = PhotoImage(file="../Assets/Image/app_icon.png")
         self.iconphoto(True, logo)
         self.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
 
@@ -145,7 +145,7 @@ class Application(tk.Tk):
 
         # play sound
         global sound_image
-        sound_image = tk.PhotoImage(file="./Assets/Image/50px_sound_button.gif")
+        sound_image = tk.PhotoImage(file="../Assets/Image/50px_sound_button.gif")
         sound_btn = tk.Button(self, image=sound_image, command=self.play_sound)
         sound_btn.pack()
 
@@ -160,3 +160,8 @@ class Application(tk.Tk):
         self.spelling.pack()
         self.kanji = ttk.Label(self, text='', font=('TkDefaultFont', 50))
         self.kanji.pack()
+
+if __name__ == '__main__':
+    app = Application();
+    app.mainloop()
+
