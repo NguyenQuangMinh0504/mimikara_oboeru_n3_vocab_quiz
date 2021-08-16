@@ -3,23 +3,12 @@ from tkinter import PhotoImage
 from Widget.Frame import *
 from Widget.Status import ActiveStatus as c
 from Widget.Menu import MainMenu
+from View import Model
 from Widget.Sound import Sound
 from Widget.Result import Result
-from View import Controller
 
 
 class Application(tk.Tk):
-
-
-
-    # def validate(self, action):
-    #     # if action == '0':  # currently has a bug for font
-    #     #     self.input_frame.kanji_input.delete(0, tk.END)
-    #     self.status['text'] = ''
-    #     self.meaning['text'] = ''
-    #     self.spelling['text'] = ''
-    #     self.kanji['text'] = ''
-    #     return True
 
     # def print_result(self, status):
     #
@@ -99,7 +88,6 @@ class Application(tk.Tk):
     #         wrong_result = ', '.join([str(i+k), self.x.iloc[i][0], self.x.iloc[i][1], self.x.iloc[i][2], self.x.iloc[i][3]])
     #         result.wrong_word.insert(tk.END, wrong_result+'\n'+'------------------------'+'\n')
     #
-    #
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -111,11 +99,10 @@ class Application(tk.Tk):
         # setting the select unit part
 
         self.frame = FirstFrame(self)
-        Controller.frame_one(self, QuizFrame(self))
         self.frame.pack()
 
         # setting the logo
-        logo = PhotoImage(file="../Assets/Image/app_icon.png")
+        logo = PhotoImage(file="../Assets/Image/app_icon-2.gif")
         self.iconphoto(True, logo)
         self.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
 
@@ -123,6 +110,6 @@ class Application(tk.Tk):
 
 
 if __name__ == '__main__':
-    app = Application();
+    app = Application()
     app.mainloop()
 

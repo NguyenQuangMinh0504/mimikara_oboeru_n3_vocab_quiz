@@ -22,18 +22,22 @@ class FirstFrame(tk.Frame):
                 else:
                     button.config(highlightbackground='red')
                 k += 1
+        Controller.frame_one(self)
 
 
 class QuizFrame(tk.Frame):
 
-    def __init__(self, parent):
+    def __init__(self, parent, unit):
         super().__init__(parent)
-        self.word = ttk.Label(self, text='Something', font=('TkDefaultFont', 100))
-        self.word.pack()
-        self.word_count = ttk.Label(self, text='Something', font=('TkDefaultFont', 30))
-        self.word_count.pack()
-        label_input_frame = self.LabelInputFrame(self)
-        label_input_frame.pack(pady=10)
+        self.parent = parent
+        self.unit = unit
+
+        self.word = tk.StringVar()
+        ttk.Label(self, textvariable=self.word, font=('TkDefaultFont', 100)).pack()
+        self.word_count = tk.StringVar()
+        ttk.Label(self, textvariable=self.word_count, font=('TkDefaultFont', 30)).pack()
+        self.label_input_frame = self.LabelInputFrame(self)
+        self.label_input_frame.pack(pady=10)
         global sound_image
         sound_image = tk.PhotoImage(file="../Assets/Image/50px_sound_button.gif")
         self.sound_btn = tk.Button(self, image=sound_image)
@@ -51,6 +55,7 @@ class QuizFrame(tk.Frame):
         self.spelling.pack()
         self.kanji = ttk.Label(self, text='Something', font=('TkDefaultFont', 50))
         self.kanji.pack()
+        Controller.button_validate(self)
 
     class LabelInputFrame(tk.Frame):
         def __init__(self, parent, **kwargs):
@@ -59,8 +64,6 @@ class QuizFrame(tk.Frame):
             self.kanji_input = ttk.Entry(self)
             self.kanji_input.grid(row=1, column=0)
 
-            # self.kanji_input.config(validate='all',
-            #                         validatecommand=(parent.register(parent.validate), '%d'))
             # self.kanji_input.bind('<Return>', parent.handle)
 
             ttk.Label(self, text='Spelling').grid(row=0, column=1, sticky=tk.W, padx=5)
