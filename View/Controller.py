@@ -1,4 +1,4 @@
-from View.Widget.Frame import QuizFrame
+from View.Widget.Frame.QuizFrame import QuizFrame
 from View.Widget.gtts_sound import WordSound
 from functools import partial
 

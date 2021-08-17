@@ -1,6 +1,6 @@
-
+import tkinter as tk
 from tkinter import PhotoImage
-from Widget.Frame import *
+from View.Widget.Frame.FirstFrame import FirstFrame
 from Widget.Menu import MainMenu
 
 

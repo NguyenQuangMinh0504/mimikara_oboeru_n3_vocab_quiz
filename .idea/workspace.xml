@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad83db91-4058-4aed-95c8-145a1a61ed6d" name="Default Changelist" comment="refactor code">
+      <change afterPath="$PROJECT_DIR$/View/Widget/Frame/FirstFrame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/Widget/Frame/QuizFrame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/Widget/Frame/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Status/user_status.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Status/user_status.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Setting/Load.py" beforeDir="false" afterPath="$PROJECT_DIR$/Setting/Load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Widget/Frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Frame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Widget/Result.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Widget/Sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Sound.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Widget/Status.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Widget/gtts_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/gtts_sound.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Widget/Frame.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629180004078</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactor code">
+      <created>1629187042081</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1629187042081</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
