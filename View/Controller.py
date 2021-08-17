@@ -16,7 +16,7 @@ def change_scene(application, i):
 
 
 def play_sound(frame):
-    frame.sound_btn.config(command=lambda: WordSound.play_word_sound(frame.word))
+    frame.sound_btn.config(command=lambda: WordSound.play_word_sound(frame.word.get()))
 
 
 def button_validate(frame):
@@ -30,8 +30,10 @@ def validate(application):
     #     self.input_frame.kanji_input.delete(0, tk.END)
 
     application.frame.status['text'] = ''
-    application.frame.meaning['text'] = ''
-    application.frame.spelling['text'] = ''
-    application.frame.kanji['text'] = ''
-
+    application.frame.meaning.set("")
+    application.frame.spelling.set("")
+    application.frame.kanji.set("")
     return True
+
+
+

@@ -14,8 +14,3 @@ class Result(tk.Toplevel):
         sb.pack(side=tk.RIGHT, fill=tk.Y)
         self.wrong_word.pack()
         self.wrong_word.config(yscrollcommand=sb.set)
-
-
-
-
-

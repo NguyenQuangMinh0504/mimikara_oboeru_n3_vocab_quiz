@@ -17,3 +17,13 @@ def load_data(file):
     except FileNotFoundError:
         print(sys.path)
         print("File not found")
+
+
+def add_active_day(day):
+    with open('../Data/Status/user_status.txt', 'a') as f:
+        f.write('\n' + day)
+
+
+def get_active_day():
+    with open('../Data/Status/user_status.txt', 'r') as f:
+        return [i.rstrip() for i in f.readlines()]

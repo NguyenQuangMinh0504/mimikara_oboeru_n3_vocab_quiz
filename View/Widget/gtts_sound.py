@@ -1,6 +1,6 @@
 from gtts import gTTS
 import os
-from Widget.Sound import Sound
+from View.Widget.Sound import Sound
 
 
 class WordSound:

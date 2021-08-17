@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import calendar
 from datetime import datetime
+from Setting import Load
 
 
 class ActiveStatus(tk.Toplevel):
@@ -32,18 +33,9 @@ class ActiveStatus(tk.Toplevel):
 
     @staticmethod
     def add_active_day():
-        active_day_list = ActiveStatus.get_active_day()
-        with open('../mimikara_oboeru_n3_vocab_quiz/Data/Status/user_status.txt', 'a') as f:
-            if len(active_day_list) == 0:
-                f.write('\n' + datetime.today().strftime('%Y-%m-%d'))
-            elif datetime.today().strftime('%Y-%m-%d') != active_day_list[-1]:
-                f.write('\n' + datetime.today().strftime('%Y-%m-%d'))
-
-    @staticmethod
-    def get_active_day():
-        with open('../mimikara_oboeru_n3_vocab_quiz/Data/Status/user_status.txt', 'r') as f:
-            active_day = [i.rstrip() for i in f.readlines()]
-            return active_day
+        active_day_list = Load.get_active_day()
+        if datetime.today().strftime("%Y-%m-%d") not in active_day_list:
+            Load.add_active_day(datetime.today().strftime("%Y-%m-%d"))
 
     def _previous(self):
         self._clear_frame()
@@ -89,7 +81,7 @@ class ActiveStatus(tk.Toplevel):
                         # highlight active days
                         if datetime.strftime(
                                 datetime.strptime('{}-{}-{}'.format(self.this_year, self.this_month, self.day_list[i][j]),
-                                                  '%Y-%m-%d'), '%Y-%m-%d') in self.get_active_day():
+                                                  '%Y-%m-%d'), '%Y-%m-%d') in Load.get_active_day():
                             e.config(foreground='green', font='TkDefaultFont 12 bold')
                         # highlight today
                         if datetime.strftime(
