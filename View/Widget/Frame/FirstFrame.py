@@ -14,7 +14,7 @@ class FirstFrame(tk.Frame):
         self.parent = parent
         self.parent.geometry("400x300+600+200")
 
-        data = Load.load_unit_complete()
+        data = Load.get_unit_complete()
 
         k = 1
         self.dict = []

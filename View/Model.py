@@ -1,9 +1,9 @@
 import random
-from Setting import Load
 from View.Widget.Sound import Sound
 from View.Widget.Status import ActiveStatus
 from View.Widget.Result import Result
 from View.Widget.gtts_sound import WordSound
+from Setting import Load
 
 
 class Model:
@@ -64,6 +64,10 @@ class Model:
     def display_result(self):
         self.frame.status['text'] = 'Congratulation!!!'
         ActiveStatus.add_active_day()
+        data = Load.get_unit_complete()
+        data[self.frame.unit] = True
+        Load.set_unit_complete(data)
+
         result = Result(self.frame.parent)
         result.number_of_wrong_answer.set(result.number_of_wrong_answer.get() +
                                           '{}/{}'.format(len(self.wrong_ans), len(self.data)))
