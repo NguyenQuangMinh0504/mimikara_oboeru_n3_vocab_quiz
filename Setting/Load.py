@@ -4,10 +4,8 @@ import sys
 
 
 def get_unit_complete():
-
     with open("./Data/Status/unit_complete.json") as json_file:
-        data = json.load(json_file)
-    return data
+        return json.load(json_file)
 
 
 def set_unit_complete(data):
@@ -32,3 +30,14 @@ def add_active_day(day):
 def get_active_day():
     with open('./Data/Status/user_status.txt', 'r') as f:
         return [i.rstrip() for i in f.readlines()]
+
+
+def get_sound_setting():
+    with open("./Data/Status/sound_setting.json", 'r') as json_file:
+        return json.load(json_file)
+
+
+def set_sound_setting(data):
+    with open("./Data/Status/sound_setting.json", 'w') as json_file:
+        json.dump(data, json_file)
+

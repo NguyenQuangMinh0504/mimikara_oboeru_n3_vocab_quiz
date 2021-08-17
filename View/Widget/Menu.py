@@ -1,6 +1,7 @@
 from tkinter import Menu, BooleanVar, messagebox
 from View.Widget.Status import ActiveStatus
 from View.Widget.AddingWord import VocabularyInput
+from Setting import Load
 
 
 class MainMenu(Menu):
@@ -15,8 +16,11 @@ class MainMenu(Menu):
         # setting menu
         setting_menu = Menu(self)
         self.add_cascade(label='Setting', menu=setting_menu)
-        self.sound = BooleanVar(value=True)
-        setting_menu.add_checkbutton(label='Sound', variable=self.sound)
+
+        self.sound_check = Load.get_sound_setting()
+
+        self.sound = BooleanVar(value=self.sound_check['Sound'])
+        setting_menu.add_checkbutton(label='Sound', variable=self.sound, command=self.sound_button_handle)
         # typing_menu = Menu(setting_menu)
         # setting_menu.add_cascade(label='Typing', menu=typing_menu)
         # self.kanji = BooleanVar(value=True)
@@ -46,3 +50,10 @@ class MainMenu(Menu):
         about_detail = ("By Nguyễn Quang Minh\n",
                         "For further information please contact ngquangminh05042001@gmail.com")
         messagebox.showinfo(title="About", message=about_message, detail=about_detail)
+
+    def sound_button_handle(self):
+        self.sound_check["Sound"] = self.sound.get()
+        Load.set_sound_setting(self.sound_check)
+
+
+
