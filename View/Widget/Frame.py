@@ -2,12 +2,14 @@ import tkinter as tk
 from tkinter import ttk
 from Setting import Load
 from View import Controller
+from View.Model import Model
 
 
 class FirstFrame(tk.Frame):
     def __init__(self, parent, **kwargs):
         super().__init__(parent, **kwargs)
         self.parent = parent
+
         data = Load.load_unit_complete()
         k = 1
         self.dict = []
@@ -31,7 +33,7 @@ class QuizFrame(tk.Frame):
         super().__init__(parent)
         self.parent = parent
         self.unit = unit
-
+        self.model = Model(self)
         self.word = tk.StringVar()
         ttk.Label(self, textvariable=self.word, font=('TkDefaultFont', 100)).pack()
         self.word_count = tk.StringVar()
@@ -42,36 +44,35 @@ class QuizFrame(tk.Frame):
         sound_image = tk.PhotoImage(file="../Assets/Image/50px_sound_button.gif")
         self.sound_btn = tk.Button(self, image=sound_image)
         Controller.play_sound(self)
+        self.model.load_data()
+        self.model.load()
         self.sound_btn.pack()
 
         # for displaying the status
-        self.status = ttk.Label(self, text='Something', font=('TkDefaultFont', 100))
-        self.status.pack()
+        self.status = tk.StringVar()
+        tk.Label(self, text=self.status, font=('TkDefaultFont', 100)).pack()
 
         # for displaying the results
-        self.meaning = ttk.Label(self, text='Something', font=('TkDefaultFont', 50))
-        self.meaning.pack()
-        self.spelling = ttk.Label(self, text='Something', font=('TkDefaultFont', 50))
-        self.spelling.pack()
-        self.kanji = ttk.Label(self, text='Something', font=('TkDefaultFont', 50))
-        self.kanji.pack()
+        self.meaning = tk.StringVar()
+        tk.Label(self, text=self.meaning, font=('TkDefaultFont', 50)).pack()
+        self.spelling = tk.StringVar()
+        tk.Label(self, text=self.spelling, font=('TkDefaultFont', 50)).pack()
+        self.kanji = tk.StringVar()
+        tk.Label(self, text=self.kanji, font=('TkDefaultFont', 50)).pack()
+
         Controller.button_validate(self)
 
     class LabelInputFrame(tk.Frame):
         def __init__(self, parent, **kwargs):
             super().__init__(parent, **kwargs)
-            ttk.Label(self, text='Kanji').grid(row=0, column=0, sticky=tk.W, padx=5)
-            self.kanji_input = ttk.Entry(self)
-            self.kanji_input.grid(row=1, column=0)
 
-            # self.kanji_input.bind('<Return>', parent.handle)
+            tk.Label(self, text='Spelling').grid(row=0, column=1, sticky=tk.W, padx=5)
+            self.spelling_input = tk.StringVar()
+            self.spelling_input_btn = tk.Entry(self, textvariable=self.spelling_input)
+            self.spelling_input_btn.grid(row=0, column=2)
 
-            ttk.Label(self, text='Spelling').grid(row=0, column=1, sticky=tk.W, padx=5)
-            self.spelling_input = ttk.Entry(self)
-            self.spelling_input.grid(row=1, column=1)
-            # self.spelling_input.config(validate='all',
-            #                            validatecommand=(parent.register(parent.validate), '%d'))
             # self.spelling_input.bind('<Return>', parent.handle)
 
-            # self.button = tk.Button(self, text='Check', command=parent.handle)
-            # self.button.grid(row=1, column=2)
+            self.button = tk.Button(self, text='Check')
+            # self.button.config(command=parent.handle)
+            self.button.grid(row=0, column=3)

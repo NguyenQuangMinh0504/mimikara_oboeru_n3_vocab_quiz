@@ -57,8 +57,8 @@ class VocabularyInput(tk.Toplevel):
             VocabularyInput._error_message()
             return None
 
-        new_file = not os.path.exists('./Data/Dictionary/data6.csv')
-        with open('./Data/Dictionary/data6.csv', 'a') as f:
+        new_file = not os.path.exists('./Data/Dictionary/unit6.csv')
+        with open('./Data/Dictionary/unit6.csv', 'a') as f:
             csv_writer = csv.DictWriter(f, fieldnames=['Word', 'Meaning', 'Spelling', 'Kanji'])
             if new_file:
                 csv_writer.writeheader()

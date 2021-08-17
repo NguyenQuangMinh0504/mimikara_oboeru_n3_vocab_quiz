@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+import sys
 
 
 def load_unit_complete():
@@ -11,7 +12,8 @@ def load_unit_complete():
 
 def load_data(file):
     try:
-        path = '../mimikara_oboeru_n3_vocab_quiz/Data/Dictionary/'
-        return pd.read_csv(path+file)
-    except FileExistsError:
+        path = '../Data/Dictionary/'
+        return pd.read_csv(path+file+'.csv')
+    except FileNotFoundError:
+        print(sys.path)
         print("File not found")

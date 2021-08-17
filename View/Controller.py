@@ -1,12 +1,11 @@
 from View.Widget.Frame import QuizFrame
 from View.Widget.gtts_sound import WordSound
-from View import Model
-
+from functools import partial
 
 
 def frame_one(frame):
     for i, j in frame.dict:
-        j.config(command=lambda: change_scene(frame.parent, i))
+        j.config(command=partial(change_scene, frame.parent, i))
 
 
 def change_scene(application, i):
@@ -21,8 +20,9 @@ def play_sound(frame):
 
 
 def button_validate(frame):
-    frame.label_input_frame.spelling_input.config(validate='all',
-                                                  validatecommand=frame.parent.register(lambda: validate(frame.parent)))
+    frame.label_input_frame.spelling_input_btn.config(validate='all',
+                                                      validatecommand=frame.parent.register(
+                                                          lambda: validate(frame.parent)))
 
 
 def validate(application):
