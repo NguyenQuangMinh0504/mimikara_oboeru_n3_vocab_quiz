@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad83db91-4058-4aed-95c8-145a1a61ed6d" name="Default Changelist" comment="refactor code">
-      <change afterPath="$PROJECT_DIR$/View/Widget/Frame/FirstFrame.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/Widget/Frame/QuizFrame.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/Widget/Frame/__init__.py" afterDir="false" />
+    <list default="true" id="ad83db91-4058-4aed-95c8-145a1a61ed6d" name="Default Changelist" comment="change default btn color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Widget/Frame.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Widget/Frame/FirstFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Frame/FirstFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Widget/Frame/QuizFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Frame/QuizFrame.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,27 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.GUI">
+    <configuration name="Application" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mimikara_oboeru_n3_vocab_quiz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Application.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Controller" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mimikara_oboeru_n3_vocab_quiz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,6 +81,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/View/Controller.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FirstFrame" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mimikara_oboeru_n3_vocab_quiz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/View/Widget/Frame" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/View/Widget/Frame/FirstFrame.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -90,27 +131,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Load" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="mimikara_oboeru_n3_vocab_quiz" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Setting" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Setting/Load.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mimikara_oboeru_n3_vocab_quiz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,41 +152,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Status" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="mimikara_oboeru_n3_vocab_quiz" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/View/Widget" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/View/Widget/Status.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.GUI" />
       <item itemvalue="Python.Model" />
-      <item itemvalue="Python.Status" />
-      <item itemvalue="Python.Load" />
+      <item itemvalue="Python.Application" />
+      <item itemvalue="Python.FirstFrame" />
       <item itemvalue="Python.Controller" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.GUI" />
-        <item itemvalue="Python.Model" />
         <item itemvalue="Python.Controller" />
-        <item itemvalue="Python.Load" />
-        <item itemvalue="Python.Status" />
+        <item itemvalue="Python.FirstFrame" />
+        <item itemvalue="Python.Model" />
+        <item itemvalue="Python.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629187042081</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="refactor frame">
+      <created>1629187536168</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1629187536168</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change default btn color">
+      <created>1629187596567</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1629187596567</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,6 +324,8 @@
     <MESSAGE value="aaaaaaaaaaa" />
     <MESSAGE value="oh men" />
     <MESSAGE value="refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
+    <MESSAGE value="refactor frame" />
+    <MESSAGE value="change default btn color" />
+    <option name="LAST_COMMIT_MESSAGE" value="change default btn color" />
   </component>
 </project>

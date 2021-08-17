@@ -1,9 +1,9 @@
 import random
-import tkinter as tk
 from Setting import Load
 from View.Widget.Sound import Sound
 from View.Widget.Status import ActiveStatus
 from View.Widget.Result import Result
+from View.Widget.gtts_sound import WordSound
 
 
 class Model:
@@ -85,4 +85,7 @@ class Model:
             wrong_result = ', '.join([str(i+k), self.data.iloc[i][0], self.data.iloc[i][1],
                                       self.data.iloc[i][2], self.data.iloc[i][3]])
             result.wrong_word.insert('end', wrong_result+'\n'+'------------------------'+'\n')
+
+    def play_sound(self):
+        self.frame.sound_btn.config(command=lambda: WordSound.play_word_sound(self.frame.word.get()))
 
