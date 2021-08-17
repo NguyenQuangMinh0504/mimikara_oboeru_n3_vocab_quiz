@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad83db91-4058-4aed-95c8-145a1a61ed6d" name="Default Changelist" comment="change default btn color">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Model.py" afterDir="false" />
+    <list default="true" id="ad83db91-4058-4aed-95c8-145a1a61ed6d" name="Default Changelist" comment="remove Controller.py, add return btn">
       <change beforePath="$PROJECT_DIR$/View/Widget/Frame/FirstFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Frame/FirstFrame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Widget/Frame/QuizFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Frame/QuizFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Widget/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/Widget/Menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
       <recent name="$PROJECT_DIR$/Assets/Image" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.GUI">
+  <component name="RunManager" selected="Python.Application">
     <configuration name="Application" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mimikara_oboeru_n3_vocab_quiz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,11 +159,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Application" />
         <item itemvalue="Python.GUI" />
         <item itemvalue="Python.Controller" />
         <item itemvalue="Python.FirstFrame" />
         <item itemvalue="Python.Model" />
-        <item itemvalue="Python.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629187596567</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="remove Controller.py, add return btn">
+      <created>1629191434627</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1629191434627</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -326,6 +331,7 @@
     <MESSAGE value="refactor code" />
     <MESSAGE value="refactor frame" />
     <MESSAGE value="change default btn color" />
-    <option name="LAST_COMMIT_MESSAGE" value="change default btn color" />
+    <MESSAGE value="remove Controller.py, add return btn" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove Controller.py, add return btn" />
   </component>
 </project>

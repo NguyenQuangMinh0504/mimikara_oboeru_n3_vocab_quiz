@@ -5,14 +5,14 @@ import sys
 
 def load_unit_complete():
 
-    with open("../Data/Status/unit_complete.json") as json_file:
+    with open("./Data/Status/unit_complete.json") as json_file:
         data = json.load(json_file)
     return data
 
 
 def load_data(file):
     try:
-        path = '../Data/Dictionary/'
+        path = './Data/Dictionary/'
         return pd.read_csv(path+file+'.csv')
     except FileNotFoundError:
         print(sys.path)
@@ -20,10 +20,10 @@ def load_data(file):
 
 
 def add_active_day(day):
-    with open('../Data/Status/user_status.txt', 'a') as f:
+    with open('./Data/Status/user_status.txt', 'a') as f:
         f.write('\n' + day)
 
 
 def get_active_day():
-    with open('../Data/Status/user_status.txt', 'r') as f:
+    with open('./Data/Status/user_status.txt', 'r') as f:
         return [i.rstrip() for i in f.readlines()]

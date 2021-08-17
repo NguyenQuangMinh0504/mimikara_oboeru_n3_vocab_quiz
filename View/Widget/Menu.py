@@ -1,6 +1,6 @@
 from tkinter import Menu, BooleanVar, messagebox
-from Widget.Status import ActiveStatus
-from Widget.AddingWord import VocabularyInput
+from View.Widget.Status import ActiveStatus
+from View.Widget.AddingWord import VocabularyInput
 
 
 class MainMenu(Menu):

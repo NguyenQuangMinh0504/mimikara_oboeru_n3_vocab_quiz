@@ -30,7 +30,7 @@ class QuizFrame(tk.Frame):
         self.label_input_frame.pack(pady=10)
 
         global sound_image
-        sound_image = tk.PhotoImage(file="../Assets/Image/50px_sound_button.gif")
+        sound_image = tk.PhotoImage(file="./Assets/Image/50px_sound_button.gif")
         self.sound_btn = tk.Button(self, image=sound_image)
         self.sound_btn.pack()
 
@@ -51,8 +51,6 @@ class QuizFrame(tk.Frame):
 
         self.kanji = tk.StringVar()
         tk.Label(self, textvariable=self.kanji, font=('TkDefaultFont', 50)).pack()
-
-
         self.label_input_frame.spelling_input_btn.bind("<Return>", self.model.handle)
         self.label_input_frame.button.config(command=self.model.handle)
 

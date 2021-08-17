@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import PhotoImage
 from View.Widget.Frame.FirstFrame import FirstFrame
-from Widget.Menu import MainMenu
+from View.Widget.Menu import MainMenu
 
 
 class Application(tk.Tk):
@@ -18,12 +18,7 @@ class Application(tk.Tk):
         self.frame.pack()
 
         # setting the logo
-        logo = PhotoImage(file="../Assets/Image/app_icon-2.gif")
+        logo = PhotoImage(file="./Assets/Image/app_icon-2.gif")
         self.iconphoto(True, logo)
 
 
-
-
-if __name__ == '__main__':
-    app = Application()
-    app.mainloop()
