@@ -2,6 +2,8 @@ import json
 import pandas as pd
 import sys
 
+right_sound_path = './Assets/Sound/right_sound.wav'
+wrong_sound_path = './Assets/Sound/wrong_sound.wav'
 
 def get_unit_complete():
     with open("./Data/Status/unit_complete.json") as json_file:
