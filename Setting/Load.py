@@ -4,6 +4,7 @@ import sys
 
 right_sound_path = './Assets/Sound/right_sound.wav'
 wrong_sound_path = './Assets/Sound/wrong_sound.wav'
+logo_path = "./Assets/Image/app_icon-2.gif"
 
 def get_unit_complete():
     with open("./Data/Status/unit_complete.json") as json_file:
