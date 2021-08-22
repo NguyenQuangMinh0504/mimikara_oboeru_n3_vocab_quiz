@@ -17,7 +17,7 @@ class Model:
         self.word = self.data.loc[self.index][0]
         self.word_count = len(self.data)
         self.frame.word.set(self.word)
-        self.frame.word_count.set("Word remaining " + str(self.word_count))
+        self.frame.word_count.set("Word remaining: " + str(self.word_count))
 
     def load_data(self):
         self.data = Load.load_data(self.frame.unit.replace(" ", '').lower())
