@@ -65,7 +65,7 @@ class Model:
         self.frame.status['text'] = 'Congratulation!!!'
         ActiveStatus.add_active_day()
         data = Load.get_unit_complete()
-        data[self.frame.unit] = round(len(self.wrong_ans)/len(self.data), 2)
+        data[self.frame.unit] = int((1-len(self.wrong_ans)/len(self.data))*100)
         Load.set_unit_complete(data)
 
         result = Result(self.frame.parent)

@@ -21,7 +21,7 @@ class FirstFrame(tk.Frame):
         for i in range(4):
             for j in range(3):
                 label = "Unit {}".format(k)
-                button = tk.Button(self, text=label + ": {}%".format(data[label]*100),
+                button = tk.Button(self, text=label + ": {}%".format(data[label]),
                                    width=12, command=partial(self.change_scene, label))
                 self.dict.append([label, button])
                 button.grid(row=i, column=j, padx=10, pady=10, ipadx=10, ipady=10)
