@@ -12,7 +12,7 @@ class FirstFrame(tk.Frame):
         super().__init__(parent, **kwargs)
 
         self.parent = parent
-        self.parent.geometry("400x300+600+200")
+        self.parent.geometry("600x300+450+200")
 
         data = Load.get_unit_complete()
 
@@ -21,11 +21,14 @@ class FirstFrame(tk.Frame):
         for i in range(4):
             for j in range(3):
                 label = "Unit {}".format(k)
-                button = tk.Button(self, text=label, command=partial(self.change_scene, label))
+                button = tk.Button(self, text=label + ": {}%".format(data[label]*100),
+                                   width=12, command=partial(self.change_scene, label))
                 self.dict.append([label, button])
                 button.grid(row=i, column=j, padx=10, pady=10, ipadx=10, ipady=10)
-                if data[label]:
+                if data[label] == 1:
                     button.config(highlightbackground='green')
+                elif data[label] == 0:
+                    button.config(highlightbackground='black')
                 else:
                     button.config(highlightbackground='red')
                 k += 1
