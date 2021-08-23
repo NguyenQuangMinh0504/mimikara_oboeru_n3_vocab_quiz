@@ -2,6 +2,7 @@ import tkinter as tk
 
 from View.Model import Model
 from View.Widget.Frame import FirstFrame
+from Setting import Load
 
 
 class QuizFrame(tk.Frame):
@@ -30,7 +31,7 @@ class QuizFrame(tk.Frame):
         self.label_input_frame.pack(pady=10)
 
         global sound_image
-        sound_image = tk.PhotoImage(file="./Assets/Image/50px_sound_button.gif")
+        sound_image = tk.PhotoImage(file=Load.sound_button_path)
         self.sound_btn = tk.Button(self, image=sound_image)
         self.sound_btn.pack()
 

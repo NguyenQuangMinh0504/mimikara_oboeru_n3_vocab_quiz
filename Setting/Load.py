@@ -5,6 +5,7 @@ import sys
 right_sound_path = './Assets/Sound/right_sound.wav'
 wrong_sound_path = './Assets/Sound/wrong_sound.wav'
 logo_path = "./Assets/Image/app_icon-2.gif"
+sound_button_path = "./Assets/Image/50px_sound_button.gif"
 
 
 def get_unit_complete():
