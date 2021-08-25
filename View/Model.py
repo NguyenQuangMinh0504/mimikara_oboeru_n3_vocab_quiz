@@ -65,7 +65,7 @@ class Model:
         self.frame.status['text'] = 'Congratulation!!!'
         ActiveStatus.add_active_day()
         data = Load.get_unit_complete()
-        data[self.frame.unit] = int((1-len(self.wrong_ans)/len(self.data))*100)
+        data[self.frame.unit] = max(int((1-len(self.wrong_ans)/len(self.data))*100), data[self.frame.unit])
         Load.set_unit_complete(data)
 
         result = Result(self.frame.parent)
@@ -92,4 +92,3 @@ class Model:
 
     def play_sound(self):
         self.frame.sound_btn.config(command=lambda: WordSound.play_word_sound(self.frame.word.get()))
-
