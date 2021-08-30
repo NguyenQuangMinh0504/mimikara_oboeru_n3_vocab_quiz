@@ -6,17 +6,19 @@ from Setting import Load
 
 
 class QuizFrame(tk.Frame):
+    """
+    Quiz Frame: Set the application main frame to quiz frame when play quiz
+    """
 
     def __init__(self, parent, unit):
 
         super().__init__(parent)
-
         self.parent = parent
-        self.parent.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
 
+        self.parent.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
         self.unit = unit
 
-        self.return_btn = tk.Button(self.parent, text='Return', command=self.change_scene)
+        self.return_btn = tk.Button(self.parent, text='Return', command=self._change_scene)
         self.return_btn.pack(side='top', anchor='nw')
 
         self.model = Model(self)
@@ -55,7 +57,7 @@ class QuizFrame(tk.Frame):
         self.label_input_frame.spelling_input_btn.bind("<Return>", self.model.handle)
         self.label_input_frame.button.config(command=self.model.handle)
 
-    def change_scene(self):
+    def _change_scene(self):
         self.parent.frame.destroy()
         self.return_btn.destroy()
         new_frame = FirstFrame.FirstFrame(self.parent)

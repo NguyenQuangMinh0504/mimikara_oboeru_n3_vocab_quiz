@@ -37,7 +37,7 @@ class VocabularyInput(tk.Toplevel):
         ttk.Entry(data_input, textvariable=self.kanji_input).grid(row=3, column=1, sticky=tk.W+tk.E, padx=20)
 
         # adding save button
-        self.save_button = ttk.Button(self, text='Save', command=self.on_save)
+        self.save_button = ttk.Button(self, text='Save', command=self._on_save)
         self.save_button.grid(sticky=tk.E, row=4, padx=10, pady=10)
 
         # adding status
@@ -46,7 +46,7 @@ class VocabularyInput(tk.Toplevel):
         self.status_bar = ttk.Label(self, textvariable=self.status)
         self.status_bar.grid(sticky=tk.W, row=3, padx=10, pady=10)
 
-    def on_save(self):
+    def _on_save(self):
         data = {'Word': self.word_input.get(), 'Meaning': self.meaning_input.get(), 'Spelling':
                 self.spelling_input.get(), 'Kanji': self.kanji_input.get()}
 

@@ -22,7 +22,7 @@ class FirstFrame(tk.Frame):
             for j in range(3):
                 label = "Unit {}".format(k)
                 button = tk.Button(self, text=label + ": {}%".format(data[label]),
-                                   width=12, command=partial(self.change_scene, label))
+                                   width=12, command=partial(self._change_scene, label))
                 self.dict.append([label, button])
                 button.grid(row=i, column=j, padx=10, pady=10, ipadx=10, ipady=10)
                 if data[label] == 1:
@@ -35,7 +35,7 @@ class FirstFrame(tk.Frame):
                     button.config(highlightbackground='red')
                 k += 1
 
-    def change_scene(self, unit):
+    def _change_scene(self, unit):
         self.parent.frame.destroy()
         new_frame = QuizFrame.QuizFrame(self.parent, unit)
         self.parent.frame = new_frame
