@@ -29,6 +29,8 @@ class FirstFrame(tk.Frame):
                     button.config(highlightbackground='green')
                 elif data[label] == 0:
                     button.config(highlightbackground='black')
+                elif data[label] > 50:
+                    button.config(highlightbackground='yellow')
                 else:
                     button.config(highlightbackground='red')
                 k += 1
