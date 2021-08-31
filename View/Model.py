@@ -91,4 +91,4 @@ class Model:
             result.wrong_word.insert('end', wrong_result+'\n'+'------------------------'+'\n')
 
     def play_sound(self):
-        self.frame.sound_btn.config(command=lambda: WordSound._play_word_sound(self.frame.word.get()))
+        self.frame.sound_btn.config(command=lambda: WordSound.play_word_sound(self.frame.word.get()))

@@ -6,7 +6,7 @@ from View.Widget.Sound import Sound
 class WordSound:
 
     @staticmethod
-    def _play_word_sound(word):
+    def play_word_sound(word):
         language = 'ja'
         if '＜他＞' in word:
             word = word.replace('＜他＞', '')

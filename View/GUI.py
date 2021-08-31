@@ -5,19 +5,22 @@ from View.Widget.Menu import MainMenu
 
 
 class Application(tk.Tk):
+    """
+    Main Application
+    """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # the menu bar
+        # set up menu bar
         self.menu_bar = MainMenu(self)
         self.config(menu=self.menu_bar)
 
-        # setting the select unit part
+        # set up first frame
         self.frame = FirstFrame(self)
         self.frame.pack()
 
-        # setting the logo
+        # set up the logo
         logo = tk.PhotoImage(file=Setting.Load.logo_path)
         self.iconphoto(True, logo)
 
