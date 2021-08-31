@@ -21,18 +21,23 @@ class FirstFrame(tk.Frame):
         for i in range(4):
             for j in range(3):
                 label = "Unit {}".format(k)
-                button = tk.Button(self, text=label + ": {}%".format(data[label]),
-                                   width=12, command=partial(self._change_scene, label))
+
+                buttonborder = tk.Frame(self, highlightbackground="#37d3ff", highlightcolor="#37d3ff",
+                                        highlightthickness=2, bd=0)
+                buttonborder.grid(row=i, column=j, padx=10, pady=10, ipadx=10, ipady=10)
+                button = tk.Button(buttonborder, text=label + ": {}%".format(data[label]),
+                                   width=12,
+                                   command=partial(self._change_scene, label))
                 self.dict.append([label, button])
-                button.grid(row=i, column=j, padx=10, pady=10, ipadx=10, ipady=10)
+
                 if data[label] == 1:
-                    button.config(highlightbackground='green')
+                    button.config(highlightbackground='green', highlightcolor = 'green', fg = 'green')
                 elif data[label] == 0:
-                    button.config(highlightbackground='black')
+                    button.config(highlightbackground='black', highlightcolor = 'black', fg = 'black')
                 elif data[label] > 50:
-                    button.config(highlightbackground='yellow')
+                    button.config(highlightbackground='yellow', highlightcolor = 'yellow', fg='yellow')
                 else:
-                    button.config(highlightbackground='red')
+                    button.config(highlightbackground='red', highlightcolor = 'red', fg='red')
                 k += 1
 
     def _change_scene(self, unit):
