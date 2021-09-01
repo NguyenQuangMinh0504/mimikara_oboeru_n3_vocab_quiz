@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 
 from View.Model import Model
 from View.Widget.Frame import FirstFrame
@@ -76,7 +77,7 @@ class QuizFrame(tk.Frame):
             self.spelling_input_btn = tk.Entry(self, textvariable=self.spelling_input)
             self.spelling_input_btn.grid(row=0, column=2)
 
-            self.button = tk.Button(self, text='Check')
+            self.button = ttk.Button(self, text='Check')
             self.button.grid(row=0, column=3)
             self.spelling_input_btn.config(validate='all', validatecommand=self.parent.register(self.validate))
 
