@@ -45,21 +45,20 @@ class FirstFrame(tk.Frame):
             for i in range(4):
                 for j in range(3):
                     label = "Unit {}".format(k)
-                    button_border = tk.Frame(self)
+                    button_border = tk.Frame(self, bd=2)
                     button_border.grid(row=i, column=j, padx=10, pady=10)
-                    button = ttk.Button(self, text=label + ": {}%".format(data[label]),
+                    button = ttk.Button(button_border, text=label + ": {}%".format(data[label]),
                                         width=12, command=partial(self._change_scene, label))
                     button.pack()
                     self.dict.append([label, button])
-
                     if data[label] == 1:
-                        button_border.config(background='green')
+                        button_border.config(bg='green')
                     elif data[label] == 0:
-                        button.config(background='black')
+                        button_border.config(bg='black')
                     elif data[label] > 50:
-                        button.config(background='yellow')
+                        button_border.config(bg='yellow')
                     else:
-                        button.config(background='red')
+                        button_border.config(bg='red')
                     k += 1
 
     def _change_scene(self, unit):
