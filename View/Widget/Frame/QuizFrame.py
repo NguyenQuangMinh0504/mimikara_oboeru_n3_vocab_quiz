@@ -43,7 +43,7 @@ class QuizFrame(tk.Frame):
         self.model.load()
 
         # for displaying the status
-        self.status = tk.Label(self, font=('TkDefaultFont', 100))
+        self.status = tk.Label(self, font=('TkDefaultFont', 50))
         self.status.pack()
 
         # for displaying the results
