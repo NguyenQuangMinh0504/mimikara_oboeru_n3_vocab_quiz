@@ -19,7 +19,7 @@ class QuizFrame(tk.Frame):
         self.parent.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
         self.unit = unit
 
-        self.return_btn = tk.Button(self.parent, text='Return', command=self._change_scene)
+        self.return_btn = ttk.Button(self.parent, text='Return', command=self._change_scene)
         self.return_btn.pack(side='top', anchor='nw')
 
         self.model = Model(self)
