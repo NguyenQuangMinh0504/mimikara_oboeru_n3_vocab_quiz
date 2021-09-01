@@ -30,7 +30,7 @@ class FirstFrame(tk.Frame):
                                        width=12, command=partial(self._change_scene, label))
                     self.dict.append([label, button])
                     button.grid(row=i, column=j, padx=10, pady=10, ipadx=10, ipady=10)
-                    if data[label] == 1:
+                    if data[label] == 100:
                         button.config(highlightbackground='green')
                     elif data[label] == 0:
                         button.config(highlightbackground='black')
@@ -51,7 +51,7 @@ class FirstFrame(tk.Frame):
                                         width=12, command=partial(self._change_scene, label))
                     button.pack()
                     self.dict.append([label, button])
-                    if data[label] == 1:
+                    if data[label] == 100:
                         button_border.config(bg='green')
                     elif data[label] == 0:
                         button_border.config(bg='black')
