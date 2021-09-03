@@ -14,6 +14,7 @@ class QuizFrame(tk.Frame):
     def __init__(self, parent, unit):
 
         super().__init__(parent)
+        self.configure(bg='#F6D3CB')
         self.parent = parent
 
         self.parent.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
@@ -69,6 +70,7 @@ class QuizFrame(tk.Frame):
 
         def __init__(self, parent, **kwargs):
             super().__init__(parent, **kwargs)
+            self.configure(bg='#F6D3CB')
             self.parent = parent
 
             tk.Label(self, text='Spelling').grid(row=0, column=1, sticky=tk.W, padx=5)

@@ -13,6 +13,7 @@ class FirstFrame(tk.Frame):
 
         super().__init__(parent, **kwargs)
 
+        self.configure(bg='#F6D3CB')
         self.parent = parent
         self.parent.geometry("600x300+450+200")
 

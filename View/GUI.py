@@ -11,6 +11,7 @@ class Application(tk.Tk):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.configure(bg='#F6D3CB')
 
         # set up menu bar
         self.menu_bar = MainMenu(self)
