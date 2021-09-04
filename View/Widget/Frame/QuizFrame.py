@@ -26,17 +26,17 @@ class QuizFrame(tk.Frame):
         self.model = Model(self)
 
         self.word = tk.StringVar()
-        tk.Label(self, textvariable=self.word, font=('TkDefaultFont', 100)).pack()
+        tk.Label(self, textvariable=self.word, font=('TkDefaultFont', 100), bg='#F6D3CB').pack()
 
         self.word_count = tk.StringVar()
-        tk.Label(self, textvariable=self.word_count, font=('TkDefaultFont', 30)).pack()
+        tk.Label(self, textvariable=self.word_count, font=('TkDefaultFont', 30), bg='#F6D3CB').pack()
 
         self.label_input_frame = self.LabelInputFrame(self)
         self.label_input_frame.pack(pady=10)
 
         global sound_image
         sound_image = tk.PhotoImage(file=Load.sound_button_path)
-        self.sound_btn = tk.Button(self, image=sound_image)
+        self.sound_btn = tk.Button(self, image=sound_image, bg='#F6D3CB')
         self.sound_btn.pack()
 
         self.model.play_sound()
@@ -44,18 +44,18 @@ class QuizFrame(tk.Frame):
         self.model.load()
 
         # for displaying the status
-        self.status = tk.Label(self, font=('TkDefaultFont', 50))
+        self.status = tk.Label(self, font=('TkDefaultFont', 50), bg='#F6D3CB')
         self.status.pack()
 
         # for displaying the results
         self.meaning = tk.StringVar()
-        tk.Label(self, textvariable=self.meaning, font=('TkDefaultFont', 50)).pack()
+        tk.Label(self, textvariable=self.meaning, font=('TkDefaultFont', 50), bg='#F6D3CB').pack()
 
         self.spelling = tk.StringVar()
-        tk.Label(self, textvariable=self.spelling, font=('TkDefaultFont', 50)).pack()
+        tk.Label(self, textvariable=self.spelling, font=('TkDefaultFont', 50), bg='#F6D3CB').pack()
 
         self.kanji = tk.StringVar()
-        tk.Label(self, textvariable=self.kanji, font=('TkDefaultFont', 50)).pack()
+        tk.Label(self, textvariable=self.kanji, font=('TkDefaultFont', 50), bg='#F6D3CB').pack()
         self.label_input_frame.spelling_input_btn.bind("<Return>", self.model.handle)
         self.label_input_frame.button.config(command=self.model.handle)
 
@@ -73,14 +73,14 @@ class QuizFrame(tk.Frame):
             self.configure(bg='#F6D3CB')
             self.parent = parent
 
-            tk.Label(self, text='Spelling').grid(row=0, column=1, sticky=tk.W, padx=5)
+            tk.Label(self, text='Spelling', bg='#F6D3CB').grid(row=0, column=1, sticky=tk.W, padx=5)
 
             self.spelling_input = tk.StringVar()
             self.spelling_input_btn = tk.Entry(self, textvariable=self.spelling_input)
             self.spelling_input_btn.grid(row=0, column=2)
 
             self.button = ttk.Button(self, text='Check')
-            self.button.grid(row=0, column=3)
+            self.button.grid(row=0, column=3, padx=5)
             self.spelling_input_btn.config(validate='all', validatecommand=self.parent.register(self.validate))
 
         def validate(self):
