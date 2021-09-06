@@ -48,14 +48,17 @@ class QuizFrame(tk.Frame):
         self.status.pack()
 
         # for displaying the results
+        self.word_index = tk.StringVar()
+        tk.Label(self, textvariable=self.word_index, font=('TkDefaultFont', 40), bg='#F6D3CB').pack()
+
         self.meaning = tk.StringVar()
-        tk.Label(self, textvariable=self.meaning, font=('TkDefaultFont', 50), bg='#F6D3CB').pack()
+        tk.Label(self, textvariable=self.meaning, font=('TkDefaultFont', 40), bg='#F6D3CB').pack()
 
         self.spelling = tk.StringVar()
-        tk.Label(self, textvariable=self.spelling, font=('TkDefaultFont', 50), bg='#F6D3CB').pack()
+        tk.Label(self, textvariable=self.spelling, font=('TkDefaultFont', 40), bg='#F6D3CB').pack()
 
         self.kanji = tk.StringVar()
-        tk.Label(self, textvariable=self.kanji, font=('TkDefaultFont', 50), bg='#F6D3CB').pack()
+        tk.Label(self, textvariable=self.kanji, font=('TkDefaultFont', 40), bg='#F6D3CB').pack()
         self.label_input_frame.spelling_input_btn.bind("<Return>", self.model.handle)
         self.label_input_frame.button.config(command=self.model.handle)
 
@@ -88,6 +91,7 @@ class QuizFrame(tk.Frame):
             #     self.input_frame.kanji_input.delete(0, tk.END)
 
             self.parent.parent.frame.status['text'] = ''
+            self.parent.parent.frame.word_index.set("")
             self.parent.parent.frame.meaning.set("")
             self.parent.parent.frame.spelling.set("")
             self.parent.parent.frame.kanji.set("")

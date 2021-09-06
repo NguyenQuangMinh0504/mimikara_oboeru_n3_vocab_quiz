@@ -30,6 +30,7 @@ class Model:
         if status:
             self.choice_list.remove(self.index)
             self.frame.label_input_frame.spelling_input.set('')
+            self.frame.word_index.set('word number: ' + str(self.data.loc[self.index][0]))
             self.frame.meaning.set('meaning: ' + self.data.loc[self.index][2])
             self.frame.spelling.set('spelling: ' + self.data.loc[self.index][3])
             self.frame.kanji.set('kanji: ' + self.data.loc[self.index][4])
@@ -47,6 +48,7 @@ class Model:
             if self.index not in self.wrong_ans:
                 self.wrong_ans.append(self.index)
             self.frame.status.config(foreground='red', text='Incorrect')
+            self.frame.word_index.set('word number: ' + str(self.data.loc[self.index][0]))
             self.frame.meaning.set('meaning: ' + self.data.loc[self.index][2])
             self.frame.spelling.set('spelling: ' + self.data.loc[self.index][3])
             self.frame.kanji.set('kanji: ' + self.data.loc[self.index][4])
