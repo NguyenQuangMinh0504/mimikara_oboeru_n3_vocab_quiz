@@ -1,50 +1,50 @@
-word,meaning,spelling,kanji
-太陽,sun,taiyou,thái dương
-地球,earth,chikyuu,địa cầu
-温度,temperature,ondo,ôn độ
-湿度,humidity,shitsudo,thấp độ
-湿気,"being humid, moisture",shikke,thấp khí
-梅雨,rainy season,tsuyu,mai vũ
-かび,mold,kabi,mi
-暖房,heater,danbou,noãn phòng
-皮,"skin, hide",kawa,bì
-缶,can,kan,phữu
-画面,screen,gamen,họa diện
-番組,(radio/TV) program,bangumi,phiên tổ
-記事,article(newspaper/magazine),kiji,kí sự
-近所,neighborhood,kinjo,cận sở
-警察,police,keisatsu,cảnh sát
-犯人,criminal,hannin,phạm nhân
-小銭,small change,kozeni,tiểu tiền
-ごちそう,"feast, treating to",gochisou,chưa học
-作者,"writer, artist",sakusha,tác giả
-作品,work (of art/literature),sakuhin,tác phẩm
-制服,uniform,seifuku,chế phục
-洗剤,detergent,senzai,tẩy tễ
-底,bottom,soko,đề
-地下,"underground, basement",chika,địa hạ
-寺,temple,tera,tự
-道路,road,douro,đạo lộ
-坂,"hill, slope",saka,phản
-煙,smoke,kemuri,yên
-灰,ash,hai,hôi
-判,seal,han,phán
-名刺,"calling card, visiting card",meishi,danh thứ
-免許,license,menkyo,miễn hứa
-多く,many,ooku,đa
-前半,first half,zenhan,tiền bán
-後半,second half,kouhan,hậu bán
-最高,"highest, best, really",saikou,tối cao
-最低,"lowest, worst, disgusting",saitei,tối đê
-最初,first,saisho,tối sơ
-最後,"last, end(of the line)",saigo,tối hậu
-自動,automation,jidou,tự động
-種類,"type, kind",shurui,chủng loại
-性格,"personality, character",seikaku,tính cách
-性質,"property, disposition",seishitsu,tính chất
-順番,"order, sequence",junban,thuận phiên
-番,"(one's) turn, watching over",ban,phiên
-方法,"method, way",houhou,phương pháp
-製品,product,seihin,chế phẩm
-値上がり,price rise,neagari,trị thượng
-生,"raw, draft(beer)",nama,sanh
+index,word,meaning,spelling,kanji
+72,太陽,sun,taiyou,thái dương
+73,地球,earth,chikyuu,địa cầu
+74,温度,temperature,ondo,ôn độ
+75,湿度,humidity,shitsudo,thấp độ
+76,湿気,"being humid, moisture",shikke,thấp khí
+77,梅雨,rainy season,tsuyu,mai vũ
+78,かび,mold,kabi,mi
+79,暖房,heater,danbou,noãn phòng
+80,皮,"skin, hide",kawa,bì
+81,缶,can,kan,phữu
+82,画面,screen,gamen,họa diện
+83,番組,(radio/TV) program,bangumi,phiên tổ
+84,記事,article(newspaper/magazine),kiji,kí sự
+85,近所,neighborhood,kinjo,cận sở
+86,警察,police,keisatsu,cảnh sát
+87,犯人,criminal,hannin,phạm nhân
+88,小銭,small change,kozeni,tiểu tiền
+89,ごちそう,"feast, treating to",gochisou,chưa học
+90,作者,"writer, artist",sakusha,tác giả
+91,作品,work (of art/literature),sakuhin,tác phẩm
+92,制服,uniform,seifuku,chế phục
+93,洗剤,detergent,senzai,tẩy tễ
+94,底,bottom,soko,đề
+95,地下,"underground, basement",chika,địa hạ
+96,寺,temple,tera,tự
+97,道路,road,douro,đạo lộ
+98,坂,"hill, slope",saka,phản
+99,煙,smoke,kemuri,yên
+100,灰,ash,hai,hôi
+101,判,seal,han,phán
+102,名刺,"calling card, visiting card",meishi,danh thứ
+103,免許,license,menkyo,miễn hứa
+104,多く,many,ooku,đa
+105,前半,first half,zenhan,tiền bán
+106,後半,second half,kouhan,hậu bán
+107,最高,"highest, best, really",saikou,tối cao
+108,最低,"lowest, worst, disgusting",saitei,tối đê
+109,最初,first,saisho,tối sơ
+110,最後,"last, end(of the line)",saigo,tối hậu
+111,自動,automation,jidou,tự động
+112,種類,"type, kind",shurui,chủng loại
+113,性格,"personality, character",seikaku,tính cách
+114,性質,"property, disposition",seishitsu,tính chất
+115,順番,"order, sequence",junban,thuận phiên
+116,番,"(one's) turn, watching over",ban,phiên
+117,方法,"method, way",houhou,phương pháp
+118,製品,product,seihin,chế phẩm
+119,値上がり,price rise,neagari,trị thượng
+120,生,"raw, draft(beer)",nama,sanh

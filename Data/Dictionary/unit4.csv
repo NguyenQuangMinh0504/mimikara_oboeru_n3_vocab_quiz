@@ -1,51 +1,51 @@
-Word,Meaning,Spelling,Kanji
-効く,"be effective, work right",kiku,hiệu
-はやる,be popular; (disease) spreads,hayaru,không
-経つ,"elapse, pass",tatsu,kinh
-間に合う,make it on time,maniau,gian hợp
-間に合せる,finish on time,maniawaseru,gian hợp
-通う,"commute, go regularly; understand (someone's feelings)",kayou,thông
-混む,be crowded,komu,hỗn
-すれ違う,pass each other;miss,surechigau,vi
-掛かる,"be covered; take (time, money, etc.); be subjected to; (engine) starts",kakaru,quải
-掛ける,"cover; take (one's time); start (an engine), multiply",kakeru,quải
-動く,move; work; take action,ugoku,động
-動かす,move; work (a machine); set in motion,ugokasu,động
-離れる,"be away from, be apart (in age, etc.)",hanareru,li
-離す,move apart; let go,hanasu,li
-ぶつかる,collide; disagree; confict,butsukaru,không
-ぶつける,crash into,butsukeru,không
-こぼれる,be spilled; (tears) are shed,koboreru,không
-こぼす,spill; shed (tears),kobosu,không
-ふく,wipe,fuku,không
-片付く,be tidied; be finished; be settled,kataduku,phiến phó
-片付ける,"tidy, finish, settle",katadukeru,phiến phó
-包む,wrap,tsutsumu,bao
-張る,put up (a poster); affix,haru,trương
-無くなる,be lost,nakunaru,vô
-無くす,lose,nakusu,vô
-足りる,be sufficient,tariru,túc
-残る,"be left over, remain",nokoru,tàn
-残す,"not finish (eating); only (something) remains, leave behind",nokosu,tàn
-腐る,rot,kusaru,hủ
-むける,peel off,mukeru,không
-むく,peel,muku,không
-滑る,skate; slip,suberu,hoạt
-積もる,accumulate,tsumoru,tích
-積む,pile; lay (bricks); load; accumulate,tsumu,tích
-空く,(a hole) opens; be vacant; be avaiable,aku,không
-空ける,open (a hole); vacate (a seat); keep open (a date),akeru,không
-下がる,go down; step back,sagaru,hạ
-下げる,lower; take away,sageru,hạ
-冷える,be chilled; feel chilly,hieru,lãnh
-冷やす,chill; calm down,hiyasu,lãnh
-冷める,get cold; lose passion,sameru,lãnh
-冷ます,allow (something) to cool,samasu,lãnh
-燃える,burn; be passionate,moeru,nhiên
-燃やす,"burn (something); burn with (passion, etc.)",moyasu,nhiên
-沸く,boil; (bath) is ready; become excited,waku,phí
-沸かす,boil; prepare (a bath); excite,wakasu,phí
-鳴る,rumble; ring,naru,minh
-鳴らす,sound (a buzzer),narasu,minh
-役立つ/役に立つ,"be helpful, be of use",yakudatsu/yakunitatsu,dịch lập
-役立てる/役に立てる,put to use,yakudateru/yakunitateru,dịch lập
+index,Word,Meaning,Spelling,Kanji
+171,効く,"be effective, work right",kiku,hiệu
+172,はやる,be popular; (disease) spreads,hayaru,không
+173,経つ,"elapse, pass",tatsu,kinh
+174,間に合う,make it on time,maniau,gian hợp
+175,間に合せる,finish on time,maniawaseru,gian hợp
+176,通う,"commute, go regularly; understand (someone's feelings)",kayou,thông
+177,混む,be crowded,komu,hỗn
+178,すれ違う,pass each other;miss,surechigau,vi
+179,掛かる,"be covered; take (time, money, etc.); be subjected to; (engine) starts",kakaru,quải
+180,掛ける,"cover; take (one's time); start (an engine), multiply",kakeru,quải
+181,動く,move; work; take action,ugoku,động
+182,動かす,move; work (a machine); set in motion,ugokasu,động
+183,離れる,"be away from, be apart (in age, etc.)",hanareru,li
+184,離す,move apart; let go,hanasu,li
+185,ぶつかる,collide; disagree; confict,butsukaru,không
+186,ぶつける,crash into,butsukeru,không
+187,こぼれる,be spilled; (tears) are shed,koboreru,không
+188,こぼす,spill; shed (tears),kobosu,không
+189,ふく,wipe,fuku,không
+190,片付く,be tidied; be finished; be settled,kataduku,phiến phó
+191,片付ける,"tidy, finish, settle",katadukeru,phiến phó
+192,包む,wrap,tsutsumu,bao
+193,張る,put up (a poster); affix,haru,trương
+194,無くなる,be lost,nakunaru,vô
+195,無くす,lose,nakusu,vô
+196,足りる,be sufficient,tariru,túc
+197,残る,"be left over, remain",nokoru,tàn
+198,残す,"not finish (eating); only (something) remains, leave behind",nokosu,tàn
+199,腐る,rot,kusaru,hủ
+200,むける,peel off,mukeru,không
+201,むく,peel,muku,không
+202,滑る,skate; slip,suberu,hoạt
+203,積もる,accumulate,tsumoru,tích
+204,積む,pile; lay (bricks); load; accumulate,tsumu,tích
+205,空く,(a hole) opens; be vacant; be avaiable,aku,không
+206,空ける,open (a hole); vacate (a seat); keep open (a date),akeru,không
+207,下がる,go down; step back,sagaru,hạ
+208,下げる,lower; take away,sageru,hạ
+209,冷える,be chilled; feel chilly,hieru,lãnh
+210,冷やす,chill; calm down,hiyasu,lãnh
+211,冷める,get cold; lose passion,sameru,lãnh
+212,冷ます,allow (something) to cool,samasu,lãnh
+213,燃える,burn; be passionate,moeru,nhiên
+214,燃やす,"burn (something); burn with (passion, etc.)",moyasu,nhiên
+215,沸く,boil; (bath) is ready; become excited,waku,phí
+216,沸かす,boil; prepare (a bath); excite,wakasu,phí
+217,鳴る,rumble; ring,naru,minh
+218,鳴らす,sound (a buzzer),narasu,minh
+219,役立つ/役に立つ,"be helpful, be of use",yakudatsu/yakunitatsu,dịch lập
+220,役立てる/役に立てる,put to use,yakudateru/yakunitateru,dịch lập

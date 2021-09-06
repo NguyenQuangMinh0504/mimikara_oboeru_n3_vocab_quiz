@@ -1,61 +1,61 @@
-Word,Meaning,Spelling,Kanji
-世話,"care, support",sewa,thế thoại
-家庭,"home, household",katei,gia đình
-協力,cooperation,kyouryoku,hiệp lực
-感謝,"gratitude, thank",kansha,cảm tạ
-礼,"token of gratitude/appreciation",rei,lễ
-詫び,apology,wabi,sá
-おじぎ,bow,ojigi,không
-握手,handshake,akushu,ác thủ
-意地悪,spite,ijiwaru,ý địa ác
-いたずら,"prank, mischief",itazura,không
-節約,"saving (money, electricity, etc.)",setsuyaku,tiết ước
-経営,management,keiei,kinh doanh
-反省,"reflection, remorse",hansei,phản tỉnh
-実行,"implementation, practice",jikkou,thực hành
-進歩,progress,shinpo,tiến bộ
-変化,change,henka,biến hóa
-発達,development,hattatsu,phát đạt
-体力,physical strength,tairyoku,thể lực
-出場,participation (in athletic event),shutsujou,xuất trường
-活躍,activity,katsuyaku,hoạt dược
-競争,competition,kyousou,cạnh tranh
-応援,"cheering, support",ouen,ứng viện
-拍手,applause,hakushu,phách thủ
-人気,popularity,ninki,nhân khí
-うわさ,rumor,uwasa,không
-情報,information,jouhou,tình báo
-交換,exchange; replacement,koukan,giao hoán
-流行,"fashion, lad, spread (of disease)",ryuukou,lưu hành
-宣伝,publicity,senden,tuyên truyền
-広告,advertisement,koukoku,quảng cáo
-注目,attention,chuumoku,chú mục
-通訳,"interpretation, interpreter",tsuuyaku,thông dịch
-翻訳,translation,honyaku,phiên dịch
-伝言,message,dengon,truyền ngôn
-報告,report,houkoku,báo cáo
-録画,recording (a video),rokuga,lục họa
-混雑,crowd,konzatsu,hỗn tạp
-渋滞,congestion,jyuutai,sáp trệ
-衝突,"collision, conflict",shoutotsu,xung đột
-被害,damage,higai,bị hại
-事故,accident,jiko,sự cố
-事件,"incident, event",jiken,sự kiện
-故障,"malfunction, breakdown",koshou,cố chướng
-修理,repair,shuuri,tu lý
-停電,blackout,teiden,đình điện
-調子,condition; tone,choushi,điều tử
-緊張,tension,kinchou,khẩn trương
-自信,confidence,jishin,tự tín
-自慢,"pride, boast",jiman,tự mãn
-感心,admiration; praiseworthy,kanshin,cảm tâm
-感動,"feeling moved, being touched",kandou,cảm động
-興奮,excitement,koufun,hưng phấn
-感想,"impression, feeling",kansou,cảm tưởng
-予想,forecast,yosou,dự tưởng
-専門,specialty,senmon,chuyên môn
-研究,"research, study",kenkyuu,nghiên cứu
-調査,"investigation, survey",chousa,điều tra
-原因,cause,genin,nguyên nhân
-結果,result,kekka,kết quả
-解決,solution,kaiketsu,giải quyết
+index,Word,Meaning,Spelling,Kanji
+311,世話,"care, support",sewa,thế thoại
+312,家庭,"home, household",katei,gia đình
+313,協力,cooperation,kyouryoku,hiệp lực
+314,感謝,"gratitude, thank",kansha,cảm tạ
+315,礼,token of gratitude/appreciation,rei,lễ
+316,詫び,apology,wabi,sá
+317,おじぎ,bow,ojigi,không
+318,握手,handshake,akushu,ác thủ
+319,意地悪,spite,ijiwaru,ý địa ác
+320,いたずら,"prank, mischief",itazura,không
+321,節約,"saving (money, electricity, etc.)",setsuyaku,tiết ước
+322,経営,management,keiei,kinh doanh
+323,反省,"reflection, remorse",hansei,phản tỉnh
+324,実行,"implementation, practice",jikkou,thực hành
+325,進歩,progress,shinpo,tiến bộ
+326,変化,change,henka,biến hóa
+327,発達,development,hattatsu,phát đạt
+328,体力,physical strength,tairyoku,thể lực
+329,出場,participation (in athletic event),shutsujou,xuất trường
+330,活躍,activity,katsuyaku,hoạt dược
+331,競争,competition,kyousou,cạnh tranh
+332,応援,"cheering, support",ouen,ứng viện
+333,拍手,applause,hakushu,phách thủ
+334,人気,popularity,ninki,nhân khí
+335,うわさ,rumor,uwasa,không
+336,情報,information,jouhou,tình báo
+337,交換,exchange; replacement,koukan,giao hoán
+338,流行,"fashion, lad, spread (of disease)",ryuukou,lưu hành
+339,宣伝,publicity,senden,tuyên truyền
+340,広告,advertisement,koukoku,quảng cáo
+341,注目,attention,chuumoku,chú mục
+342,通訳,"interpretation, interpreter",tsuuyaku,thông dịch
+343,翻訳,translation,honyaku,phiên dịch
+344,伝言,message,dengon,truyền ngôn
+345,報告,report,houkoku,báo cáo
+346,録画,recording (a video),rokuga,lục họa
+347,混雑,crowd,konzatsu,hỗn tạp
+348,渋滞,congestion,jyuutai,sáp trệ
+349,衝突,"collision, conflict",shoutotsu,xung đột
+350,被害,damage,higai,bị hại
+351,事故,accident,jiko,sự cố
+352,事件,"incident, event",jiken,sự kiện
+353,故障,"malfunction, breakdown",koshou,cố chướng
+354,修理,repair,shuuri,tu lý
+355,停電,blackout,teiden,đình điện
+356,調子,condition; tone,choushi,điều tử
+357,緊張,tension,kinchou,khẩn trương
+358,自信,confidence,jishin,tự tín
+359,自慢,"pride, boast",jiman,tự mãn
+360,感心,admiration; praiseworthy,kanshin,cảm tâm
+361,感動,"feeling moved, being touched",kandou,cảm động
+362,興奮,excitement,koufun,hưng phấn
+363,感想,"impression, feeling",kansou,cảm tưởng
+364,予想,forecast,yosou,dự tưởng
+365,専門,specialty,senmon,chuyên môn
+366,研究,"research, study",kenkyuu,nghiên cứu
+367,調査,"investigation, survey",chousa,điều tra
+368,原因,cause,genin,nguyên nhân
+369,結果,result,kekka,kết quả
+370,解決,solution,kaiketsu,giải quyết

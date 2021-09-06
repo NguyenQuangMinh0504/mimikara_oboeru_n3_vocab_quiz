@@ -1,51 +1,51 @@
-word,meaning,spelling,kanji
-渇く,become thirsty/parched,kawaku,khát
-嗅ぐ,smell,kagu,khứu
-叩く,"spank, tap, knock, clap",tataku,khấu
-殴る,punch,naguru,ẩu
-ける,kick,keru,dung cach viet kana
-抱く,"hold, hug",daku,bão
-倒れる,"fall over, collapse",taoreru,đảo
-倒す,"knock over, defeat",taosu,đảo
-起きる/起こる,"wake up, stay up, occur, arise",okiru/okoru,khởi
-起こす,"wake (someone) up, stand (somthing) up, cause",okosu,khởi
-尋ねる,ask,tazuneru,tầm
-呼ぶ,"call, summon, attract",yobu,hô
-叫ぶ,yell,sakebu,khiếu
-黙る,"be silent, do without permission",damaru,mặc
-飼う,keep (a pet),kau,tự
-数える,"count, number among",kazoeru,sổ
-乾く,dry,kawaku,kiền
-乾かす,dry,kawakasu,kiền
-畳む,fold,tatamu,điệp
-誘う,invite,sasou,dụ
-おごる,treat to (something),ogoru,dùng cách viết kana
-預かる,look after,azukaru,dự
-預ける,"deposit, put in the care of",azukeru,dự
-決まる,"be decided, be set, be done perfectly",kimaru,quyết
-決める,"decide, always do, do perfectly",kimeru,quyết
-写る,"(camera) takes (photos), (photo) comes out",utsuru,tả
-写す,"take (photos), capture (on film), copy",utsusu,tả
-思い出す,"remember, recall",omoidasu,tư xuất
-教わる,learn,osowaru,giáo
-申し込む,apply,moushikomu,thân vu
-断る,"decline, seek permission",kotowaru,đoạn
-見つかる,"be found, be caught(doing something)",mitsukaru,kiến
-見つける,find,mitsukeru,kiến
-捕まる,"be arrested, caught, hold on to",tsukamaru,bộ
-捕まえる,"arrest, catch",tsukamaeru,bộ
-乗る,ride,noru,thừa
-乗せる,"give a ride, take on",noseru,bộ
-下りる/降りる,"get off, go down, be shut, receive(approval,etc,)",oriru,hạ/giáng
-下ろす/降ろす,"drop (someone) off, take down, lower, withdraw",orosu,hạ/giáng
-直る,"be fixed, improve",naoru,trực
-直す,"fix, correct, translate",naosu,trực
-治る,get better,naoru,trì
-治す,"cure, recover",naosu,trì
-亡くなる,die,nakunaru,vong
-亡くす,lose (someone),nakusu,vong
-生まれる,"be born, be created",umareru,sanh
-産む,"give birth, create",umu,sản
-出会う,meet (by chance),deau,xuất hợp
-訪ねる,visit,tazuneru,phóng
-付き合う,"associate with, keep company with, date",tsukiau,phó hợp
+index,word,meaning,spelling,kanji
+121,渇く,become thirsty/parched,kawaku,khát
+122,嗅ぐ,smell,kagu,khứu
+123,叩く,"spank, tap, knock, clap",tataku,khấu
+124,殴る,punch,naguru,ẩu
+125,ける,kick,keru,dung cach viet kana
+126,抱く,"hold, hug",daku,bão
+127,倒れる,"fall over, collapse",taoreru,đảo
+128,倒す,"knock over, defeat",taosu,đảo
+129,起きる/起こる,"wake up, stay up, occur, arise",okiru/okoru,khởi
+130,起こす,"wake (someone) up, stand (somthing) up, cause",okosu,khởi
+131,尋ねる,ask,tazuneru,tầm
+132,呼ぶ,"call, summon, attract",yobu,hô
+133,叫ぶ,yell,sakebu,khiếu
+134,黙る,"be silent, do without permission",damaru,mặc
+135,飼う,keep (a pet),kau,tự
+136,数える,"count, number among",kazoeru,sổ
+137,乾く,dry,kawaku,kiền
+138,乾かす,dry,kawakasu,kiền
+139,畳む,fold,tatamu,điệp
+140,誘う,invite,sasou,dụ
+141,おごる,treat to (something),ogoru,dùng cách viết kana
+142,預かる,look after,azukaru,dự
+143,預ける,"deposit, put in the care of",azukeru,dự
+144,決まる,"be decided, be set, be done perfectly",kimaru,quyết
+145,決める,"decide, always do, do perfectly",kimeru,quyết
+146,写る,"(camera) takes (photos), (photo) comes out",utsuru,tả
+147,写す,"take (photos), capture (on film), copy",utsusu,tả
+148,思い出す,"remember, recall",omoidasu,tư xuất
+149,教わる,learn,osowaru,giáo
+150,申し込む,apply,moushikomu,thân vu
+151,断る,"decline, seek permission",kotowaru,đoạn
+152,見つかる,"be found, be caught(doing something)",mitsukaru,kiến
+153,見つける,find,mitsukeru,kiến
+154,捕まる,"be arrested, caught, hold on to",tsukamaru,bộ
+155,捕まえる,"arrest, catch",tsukamaeru,bộ
+156,乗る,ride,noru,thừa
+157,乗せる,"give a ride, take on",noseru,bộ
+158,下りる/降りる,"get off, go down, be shut, receive(approval,etc,)",oriru,hạ/giáng
+159,下ろす/降ろす,"drop (someone) off, take down, lower, withdraw",orosu,hạ/giáng
+160,直る,"be fixed, improve",naoru,trực
+161,直す,"fix, correct, translate",naosu,trực
+162,治る,get better,naoru,trì
+163,治す,"cure, recover",naosu,trì
+164,亡くなる,die,nakunaru,vong
+165,亡くす,lose (someone),nakusu,vong
+166,生まれる,"be born, be created",umareru,sanh
+167,産む,"give birth, create",umu,sản
+168,出会う,meet (by chance),deau,xuất hợp
+169,訪ねる,visit,tazuneru,phóng
+170,付き合う,"associate with, keep company with, date",tsukiau,phó hợp

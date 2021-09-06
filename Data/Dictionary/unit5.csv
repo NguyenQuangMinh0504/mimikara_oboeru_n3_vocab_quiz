@@ -1,39 +1,39 @@
-Word,Meaning,Spelling,Kanji
-飾り,decoration,kazari,sức
-遊び,"game, play",asobi,du
-集まり,gathering,atsumari,tập
-教え,teachings,oshie,giáo
-踊り,dance,odori,dũng
-思い,"thoughts, feelings",omoi,tư
-考え,"thought, idea",kangae,khảo
-片づけ,"tidying, disposal",kataduke,phiến
-手伝い,help,tetsudai,thủ truyền
-働き,function; action,hataraki,động
-決まり,rule,kimari,quyết
-騒ぎ,"commotion, trouble",sawagi,tao
-知らせ,"notification, news",shirase,tri
-頼み,request,tanomi,lại
-疲れ,fatique,tsukare,bì
-違い,difference,chigai,vi
-始め,beginning,hajime,thủy
-続き,"continuation, remainder",tsuduki,tục
-暮れ,end (of the year),kure,mộ
-行き,going,iki,hành
-帰り,returning,kaeri,quy
-急ぎ,urgency,isogi,cấp
-遅れ,delay,okure,trì
-貸し,"loan, lending",kashi,thải
-借り,"debt, borrowing",kari,tá
-勝ち,victory,kachi,thắng
-負け,defeat,make,phụ
-迎え,picking up,mukae,nghênh
-始まり,beginning,hajimari,thủy
-終わり,end,owari,chung
-戻り,return,modori,lệ
-別れ,parting,wakare,biệt
-喜び,joy,jorokobi,hỷ
-楽しみ,fun,tanoshimi,lạc
-笑い,laughter,warai,tiếu
-驚き,surprise,odoroki,kinh
-怒り,anger,akari,nộ
-悲しみ,sadness,kanashimi,bi
+index,Word,Meaning,Spelling,Kanji
+221,飾り,decoration,kazari,sức
+222,遊び,"game, play",asobi,du
+223,集まり,gathering,atsumari,tập
+224,教え,teachings,oshie,giáo
+225,踊り,dance,odori,dũng
+226,思い,"thoughts, feelings",omoi,tư
+227,考え,"thought, idea",kangae,khảo
+228,片づけ,"tidying, disposal",kataduke,phiến
+229,手伝い,help,tetsudai,thủ truyền
+230,働き,function; action,hataraki,động
+231,決まり,rule,kimari,quyết
+232,騒ぎ,"commotion, trouble",sawagi,tao
+233,知らせ,"notification, news",shirase,tri
+234,頼み,request,tanomi,lại
+235,疲れ,fatique,tsukare,bì
+236,違い,difference,chigai,vi
+237,始め,beginning,hajime,thủy
+238,続き,"continuation, remainder",tsuduki,tục
+239,暮れ,end (of the year),kure,mộ
+240,行き,going,iki,hành
+241,帰り,returning,kaeri,quy
+242,急ぎ,urgency,isogi,cấp
+243,遅れ,delay,okure,trì
+244,貸し,"loan, lending",kashi,thải
+245,借り,"debt, borrowing",kari,tá
+246,勝ち,victory,kachi,thắng
+247,負け,defeat,make,phụ
+248,迎え,picking up,mukae,nghênh
+249,始まり,beginning,hajimari,thủy
+250,終わり,end,owari,chung
+251,戻り,return,modori,lệ
+252,別れ,parting,wakare,biệt
+253,喜び,joy,jorokobi,hỷ
+254,楽しみ,fun,tanoshimi,lạc
+255,笑い,laughter,warai,tiếu
+256,驚き,surprise,odoroki,kinh
+257,怒り,anger,akari,nộ
+258,悲しみ,sadness,kanashimi,bi
