@@ -25,3 +25,6 @@ class Application(tk.Tk):
         # set up the logo
         logo = tk.PhotoImage(file=Setting.Load.logo_path)
         self.iconphoto(True, logo)
+
+        # Set up title
+        self.title("Mimikara Oboeru Quiz")
