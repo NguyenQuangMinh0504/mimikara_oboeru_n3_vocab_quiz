@@ -3,6 +3,7 @@ from tkinter import ttk
 
 from View.Model import Model
 from View.Widget.Frame import FirstFrame
+from View.utils import get_example
 from Setting import Load
 
 
@@ -11,7 +12,7 @@ class QuizFrame(tk.Frame):
     Quiz Frame: Set the application main frame to quiz frame when play quiz
     """
 
-    def __init__(self, parent, unit):
+    def __init__(self, parent: tk.Tk, unit):
 
         super().__init__(parent)
         self.configure(bg='#F6D3CB')
@@ -82,9 +83,15 @@ class QuizFrame(tk.Frame):
             self.spelling_input_btn = tk.Entry(self, textvariable=self.spelling_input)
             self.spelling_input_btn.grid(row=0, column=2)
 
+            # Check button
             self.button = ttk.Button(self, text='Check')
             self.button.grid(row=0, column=3, padx=5)
+
             self.spelling_input_btn.config(validate='all', validatecommand=self.parent.register(self.validate))
+
+            # Example button
+            self.example_button = ttk.Button(self, text="Example", command=self.create_new_window)
+            self.example_button.grid(row=0, column=4, padx=5)
 
         def validate(self):
             # if action == '0':  # currently has a bug for font
@@ -96,3 +103,10 @@ class QuizFrame(tk.Frame):
             self.parent.parent.frame.spelling.set("")
             self.parent.parent.frame.kanji.set("")
             return True
+
+        def create_new_window(self):
+            word = self.parent.word.get()
+            new_window = tk.Toplevel(self)
+            new_window.title("New Window")
+            label = tk.Label(new_window, text=get_example(word=word))
+            label.pack()
