@@ -130,3 +130,5 @@ dmypy.json
 
 # mac os
 .DS_Store
+
+python3.12_venv
