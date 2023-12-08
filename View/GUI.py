@@ -8,6 +8,7 @@ class Application(tk.Tk):
     """
     Main Application
     """
+    frame: FirstFrame
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -24,5 +25,3 @@ class Application(tk.Tk):
         # set up the logo
         logo = tk.PhotoImage(file=Setting.Load.logo_path)
         self.iconphoto(True, logo)
-
-

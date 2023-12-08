@@ -9,7 +9,7 @@ from View.Widget.Frame import QuizFrame
 
 class FirstFrame(tk.Frame):
 
-    def __init__(self, parent, **kwargs):
+    def __init__(self, parent: tk.Tk, **kwargs):
 
         super().__init__(parent, **kwargs)
 
@@ -64,6 +64,6 @@ class FirstFrame(tk.Frame):
 
     def _change_scene(self, unit):
         self.parent.frame.destroy()
-        new_frame = QuizFrame.QuizFrame(self.parent, unit)
+        new_frame = QuizFrame.QuizFrame(parent=self.parent, unit=unit)
         self.parent.frame = new_frame
         self.parent.frame.pack()
