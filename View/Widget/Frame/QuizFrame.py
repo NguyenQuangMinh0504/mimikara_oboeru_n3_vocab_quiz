@@ -1,10 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
-
 from View.Model import Model
 from View.Widget.Frame import FirstFrame
 from View.utils import get_example
 from Setting import Load
+import threading
 
 
 class QuizFrame(tk.Frame):
@@ -107,6 +107,14 @@ class QuizFrame(tk.Frame):
         def create_new_window(self):
             word = self.parent.word.get()
             new_window = tk.Toplevel(self)
-            new_window.title("New Window")
-            label = tk.Label(new_window, text=get_example(word=word))
+            new_window.title("Word example")
+            label = tk.Label(new_window, text="Fetching data from OpenAI API...", font=("Arial", 20))
             label.pack()
+
+            # Using new thread for fetching data from OpenAI API because it take too long.
+            def update_data():
+                example = get_example(word=word)
+                label.config(text=example)
+
+            new_thread = threading.Thread(target=update_data)
+            new_thread.start()
