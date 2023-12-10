@@ -24,8 +24,6 @@ class QuizFrame(tk.Frame):
         self.return_btn = ttk.Button(self.parent, text='Return', command=self._change_scene)
         self.return_btn.pack(side='top', anchor='nw')
 
-        self.model = Model(self)
-
         self.word = tk.StringVar()
         tk.Label(self, textvariable=self.word, font=('TkDefaultFont', 100), bg='#F6D3CB').pack()
 
@@ -40,9 +38,8 @@ class QuizFrame(tk.Frame):
         self.sound_btn = tk.Button(self, image=sound_image, bg='#F6D3CB')
         self.sound_btn.pack()
 
+        self.model = Model(self)
         self.model.play_sound()
-        self.model.load_data()
-        self.model.load()
 
         # for displaying the status
         self.status = tk.Label(self, font=('TkDefaultFont', 50), bg='#F6D3CB')

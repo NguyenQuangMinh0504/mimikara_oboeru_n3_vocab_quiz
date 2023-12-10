@@ -10,6 +10,8 @@ class Model:
     def __init__(self, frame):
         self.frame = frame
         self.wrong_ans = []
+        self.data = Load.load_data(self.frame.unit.replace(" ", "").lower())
+        self.load()
 
     def load(self):
         self.choice_list = [i for i in range(len(self.data))]
@@ -18,9 +20,6 @@ class Model:
         self.word_count = len(self.data)
         self.frame.word.set(self.word)
         self.frame.word_count.set("Word remaining: " + str(self.word_count))
-
-    def load_data(self):
-        self.data = Load.load_data(self.frame.unit.replace(" ", '').lower())
 
     def random_choice(self):
         return random.choice(self.choice_list)
