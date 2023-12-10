@@ -2,7 +2,6 @@ import random
 from View.Widget.Sound import Sound
 from View.Widget.Status import ActiveStatus
 from View.Widget.Result import Result
-from View.Widget.gtts_sound import WordSound
 from Setting import Load
 
 
@@ -14,12 +13,14 @@ class Model:
         self.load()
 
     def load(self):
+        """Loading data"""
         self.choice_list = [i for i in range(len(self.data))]
         self.index = self.random_choice()
         self.word = self.data.loc[self.index][1]
         self.word_count = len(self.data)
-        self.frame.word.set(self.word)
-        self.frame.word_count.set("Word remaining: " + str(self.word_count))
+
+    def get_data(self) -> dict:
+        return {"word": self.word, "word_count": self.word_count}
 
     def random_choice(self):
         return random.choice(self.choice_list)
@@ -78,6 +79,3 @@ class Model:
             wrong_result = ', '.join([str(self.data.iloc[i][0]), self.data.iloc[i][1], self.data.iloc[i][2],
                                       self.data.iloc[i][3], self.data.iloc[i][4]])
             result.wrong_word.insert('end', wrong_result+'\n'+'------------------------'+'\n')
-
-    def play_sound(self):
-        self.frame.sound_btn.config(command=lambda: WordSound.play_word_sound(self.frame.word.get()))
