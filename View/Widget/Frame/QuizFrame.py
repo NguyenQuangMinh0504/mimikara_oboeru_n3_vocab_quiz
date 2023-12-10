@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from View.Model import Model
 from View.Widget.Frame import FirstFrame
+from View.Widget.Sound import Sound
 from View.Widget.gtts_sound import WordSound
 from View.utils import get_example
 from Setting import Load
@@ -23,14 +24,14 @@ class QuizFrame(tk.Frame):
         self.unit = unit
 
         self.model = Model(self)
-        data = self.model.get_data()
+        self.data = self.model.get_data()
 
         self.return_btn = ttk.Button(self.parent, text='Return', command=self._change_scene)
         self.return_btn.pack(side='top', anchor='nw')
 
-        self.word = tk.StringVar(value=data["word"])
+        self.word = tk.StringVar(value=self.data["word"])
         tk.Label(self, textvariable=self.word, font=('TkDefaultFont', 100), bg='#F6D3CB').pack()
-        self.word_count = tk.StringVar(value="Word remaining: " + str(data["word_count"]))
+        self.word_count = tk.StringVar(value="Word remaining: " + str(self.data["word_count"]))
         tk.Label(self, textvariable=self.word_count, font=('TkDefaultFont', 30), bg='#F6D3CB').pack()
 
         self.label_input_frame = self.LabelInputFrame(self)
@@ -58,8 +59,39 @@ class QuizFrame(tk.Frame):
 
         self.kanji = tk.StringVar()
         tk.Label(self, textvariable=self.kanji, font=('TkDefaultFont', 40), bg='#F6D3CB').pack()
-        self.label_input_frame.spelling_input_btn.bind("<Return>", self.model.handle)
-        self.label_input_frame.button.config(command=self.model.handle)
+
+        self.label_input_frame.spelling_input_btn.bind("<Return>", self.check_answer)
+        self.label_input_frame.button.config(command=self.check_answer)
+
+    def update_word(self):
+        """Fetching new word. Then update UI"""
+        self.data = self.model.get_data()
+        self.word.set(self.data["word"])
+        self.word_count.set("Word remaining: " + str(self.data["word_count"]))
+
+    def check_answer(self, *args, **kwargs):
+        """Check user answer and display result correspondingly."""
+        self.word_index.set("word number: " + self.data["word_index"])
+        self.meaning.set("meaning: " + self.data["meaning"])
+        self.spelling.set("spelling: " + self.data["spelling"])
+        self.kanji.set("kanji: " + self.data["kanji"])
+        if self.data["spelling"] == self.label_input_frame.spelling_input.get():
+            self.status.config(foreground="green", text="Correct")
+            self.model.choice_list.remove(self.model.index)
+            if len(self.model.choice_list) == 0:
+                self.model.display_result()
+            else:
+                self.model.index = self.model.random_choice()
+                self.update_word()
+            if self.parent.menu_bar.sound.get():
+                Sound.play_right_sound()
+            self.update_word()
+        else:
+            self.status.config(foreground="red", text="Incorrect")
+            if self.model.index not in self.model.wrong_ans:
+                self.model.wrong_ans.append(self.model.index)
+            if self.parent.menu_bar.sound.get():
+                Sound.play_wrong_sound()
 
     def _change_scene(self):
         self.parent.frame.destroy()

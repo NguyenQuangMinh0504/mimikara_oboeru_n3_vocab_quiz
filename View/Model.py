@@ -20,48 +20,16 @@ class Model:
         self.word_count = len(self.data)
 
     def get_data(self) -> dict:
-        return {"word": self.word, "word_count": self.word_count}
+        return {"word": self.data.loc[self.index][1],
+                "word_count": len(self.choice_list),
+                "spelling": self.data.loc[self.index][3],
+                "word_index": str(self.data.loc[self.index][0]),
+                "meaning": self.data.loc[self.index][2],
+                "kanji": self.data.loc[self.index][4],
+                }
 
     def random_choice(self):
         return random.choice(self.choice_list)
-
-    def print_result(self, status):
-
-        if status:
-            self.choice_list.remove(self.index)
-            self.frame.label_input_frame.spelling_input.set('')
-            self.frame.word_index.set('word number: ' + str(self.data.loc[self.index][0]))
-            self.frame.meaning.set('meaning: ' + self.data.loc[self.index][2])
-            self.frame.spelling.set('spelling: ' + self.data.loc[self.index][3])
-            self.frame.kanji.set('kanji: ' + self.data.loc[self.index][4])
-            self.frame.status.config(foreground='green', text='Correct')
-            if self.frame.parent.menu_bar.sound.get():
-                Sound.play_right_sound()
-
-            if len(self.choice_list) == 0:
-                self.display_result()
-            else:
-                self.index = self.random_choice()
-                self.frame.word.set(self.data.loc[self.index][1])
-
-        else:
-            if self.index not in self.wrong_ans:
-                self.wrong_ans.append(self.index)
-            self.frame.status.config(foreground='red', text='Incorrect')
-            self.frame.word_index.set('word number: ' + str(self.data.loc[self.index][0]))
-            self.frame.meaning.set('meaning: ' + self.data.loc[self.index][2])
-            self.frame.spelling.set('spelling: ' + self.data.loc[self.index][3])
-            self.frame.kanji.set('kanji: ' + self.data.loc[self.index][4])
-
-            if self.frame.parent.menu_bar.sound.get():
-                Sound.play_wrong_sound()
-        self.frame.word_count.set('Word remaining: ' + str(len(self.choice_list)))
-
-    def handle(self, event=None):
-        if self.frame.label_input_frame.spelling_input.get() == self.data.loc[self.index][3]:
-            self.print_result(True)
-        else:
-            self.print_result(False)
 
     def display_result(self):
         self.frame.status['text'] = 'Congratulation!!!'
