@@ -3,7 +3,9 @@ from tkinter import ttk
 from View.Model import Model
 from View.Widget.Frame import FirstFrame
 from View.Widget.Sound import Sound
+from View.Widget.Result import Result
 from View.Widget.gtts_sound import WordSound
+from View.Widget.Status import ActiveStatus
 from View.utils import get_example
 from Setting import Load
 import threading
@@ -23,7 +25,7 @@ class QuizFrame(tk.Frame):
         self.parent.geometry("{0}x{1}+0+0".format(self.winfo_screenwidth(), self.winfo_screenheight()))
         self.unit = unit
 
-        self.model = Model(self)
+        self.model = Model(unit)
         self.data = self.model.get_data()
 
         self.return_btn = ttk.Button(self.parent, text='Return', command=self._change_scene)
@@ -79,7 +81,7 @@ class QuizFrame(tk.Frame):
             self.status.config(foreground="green", text="Correct")
             self.model.choice_list.remove(self.model.index)
             if len(self.model.choice_list) == 0:
-                self.model.display_result()
+                self.display_final_result()
             else:
                 self.model.index = self.model.random_choice()
                 self.update_word()
@@ -92,6 +94,27 @@ class QuizFrame(tk.Frame):
                 self.model.wrong_ans.append(self.model.index)
             if self.parent.menu_bar.sound.get():
                 Sound.play_wrong_sound()
+
+    def display_final_result(self):
+        self.status.config(text="Congratulation!!!", foreground="green")
+
+        # Add active day
+        ActiveStatus.add_active_day()
+
+        # Update right answer percentage
+        data = Load.get_unit_complete()
+        data[self.unit] = max(self.model.get_right_answer_percentage(), data[self.unit])
+        Load.set_unit_complete(data)
+
+        result = Result(self.parent)
+        result.number_of_wrong_answer.set(result.number_of_wrong_answer.get() +
+                                          '{}/{}'.format(len(self.model.wrong_ans), len(self.model.data)))
+
+        self.model.wrong_ans.sort()
+        for i in self.model.wrong_ans:
+            wrong_result = ', '.join([str(self.model.data.iloc[i][0]), self.model.data.iloc[i][1], self.model.data.iloc[i][2],
+                                      self.model.data.iloc[i][3], self.model.data.iloc[i][4]])
+            result.wrong_word.insert('end', wrong_result+'\n'+'------------------------'+'\n')
 
     def _change_scene(self):
         self.parent.frame.destroy()
