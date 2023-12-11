@@ -18,10 +18,12 @@ def set_unit_complete(data):
         json.dump(data, json_file)
 
 
-def load_data(file):
+def load_data(file) -> pd.DataFrame:
+    """
+    Loading unit vocabulary from unit.csv file"""
     try:
         path = './Data/Dictionary/'
-        return pd.read_csv(path+file+'.csv')
+        return pd.read_csv(path + file + '.csv')
     except FileNotFoundError:
         print(sys.path)
         print("File not found")
